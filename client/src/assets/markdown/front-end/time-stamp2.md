@@ -17,23 +17,36 @@ Kudos to James Wolverson 👨‍🌾 and Jeff Chesanek 🏌️‍♂️, we have
 	 ```typescript
 		// create a global method to change datetime to 12:00AM with the correct datepart
 		updateDatetime(x: Date) {
-		// invoke Date constructor to make a copy of the original date
+		// Invoke Date constructor to make a copy of the original date
 			let oldDate = new Date(x); 
-			let time = oldDate.getTime();
+			let time = oldDate.getTime();  // This returns an integer value of the time
 				
 		// 🔑 Time zone offset is measured in milliseconds. 
-		// By adding time zone offset, we change time to 12:00AM
-		// Date will be correct regardless of which time zone the browser is located.
+		// By adding time zone offset, we change the time from 12:00AM 🕛 UTC to 12:00AM 🕛 Eastern.
+		// Date will now be correct.
 			return newDate = new Date( time + oldDate.getTimezoneOffset() * 60 * 1000);
 		}
 
-		// in your component, consume the global method on your FormGroup
+		// In your component, consume this global method on your FormGroup
 		constructor(
 			globalService: GlobalService
 		) {}
 
-		// change datetime
+		// Change datetime
 		let x = this.intakeForm.policyEffectiveDate.value;
 		this.intakeForm.policyEffectiveDate.patchValue(this.globalService.updateDatetime(x));
    ```
+___
+
+Alternatively, you can use SQL to change the data column from 12:00AM UTC Time to 12:00AM Eastern Time in a database. As a developer, you need to work with a data engineer to ensure that future date fields (e.g. dates scraped off Excell workbooks) comply to this standard.
+___
+
+What if a date field in a SQL table is a mix of Eastern Time Zone and UTC Time Zone? This may sound wild, but it did happen to our Lobster Boat Rater project. We didn't get to test SQL data (scraped off Excel workbooks) until the last minute when the app was going live, and 'good' production dates with Eastern Time Zone are already entered via the app by a user and saved to a SQL database, where they get mixed with 'bad' dates with UTC Time Zone. 
+
+You can obviously use SQL to conditionally change your 'bad' dates from UTC Time Zone to Eastern Time Zone, and work with a data engineer to ensure that future dates comply to this standard.
+
+Without changing time in a SQL data, the method recommended by James and Jeff will still work. 12:00AM 🕛 Eastern Time will 4 hours added will become 4:00AM 🕓 Eastern Time. The date will still be correct.
+___
+
+Whichever solution you choose, beware of 'time creep'. If you load a date from database to the front end, add 4 hours to the date so it gets displayed correctly in Eastern Time, and then <mark>save it back to the database, overwriting the original date</mark>, you run the risk of 'time creep'. Each save operation moves the time by 4 hours. 6 save operations will push your date in database to the next day 😱😱😱. So this front end 'move time' solution should never be used in conjunction with save operations.
 
