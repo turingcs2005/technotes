@@ -38,15 +38,15 @@ Kudos to James Wolverson 👨‍🌾 and Jeff Chesanek 🏌️‍♂️, we have
    ```
 ___
 
-Alternatively, you can use SQL to change the data column from 12:00AM UTC Time to 12:00AM Eastern Time in a database. As a developer, you need to work with a data engineer to ensure that future date fields (e.g. dates scraped off Excell workbooks) comply to this standard.
+Alternatively, you can use SQL to change the date column from 12:00AM UTC Time to 12:00AM Eastern Time in a database. As a developer, you need to work with a data engineer to ensure that future date fields (e.g. dates scraped off Excel workbooks) comply to this standard.
 ___
 
-What if a date field in a SQL table is a mix of Eastern Time Zone and UTC Time Zone? This may sound wild, but it did happen to our Lobster Boat Rater project. We didn't get to test SQL data (scraped off Excel workbooks) until the last minute when the app was going live, and 'good' production dates with Eastern Time Zone are already entered via the app by a user and saved to a SQL database, where they get mixed with 'bad' dates with UTC Time Zone. 
+What if a date field in a SQL table is a mix of Eastern Time Zone and UTC Time Zone? This may sound wild, but it did happen to our Lobster Boat Rater project. We didn't get to test SQL data (scraped off Excel workbooks) until the last minute when the app was going live, and 'good' production dates with Eastern Time Zone are saved to a database via the app by a user, where these 'good' dates get mixed with 'bad' dates with UTC Time Zone. Consequently, we have two types of dates in a single SQL column 💩.
 
 You can obviously use SQL to conditionally change your 'bad' dates from UTC Time Zone to Eastern Time Zone, and work with a data engineer to ensure that future dates comply to this standard.
 
-Without changing time in a SQL data, the method recommended by James and Jeff will still work. 12:00AM 🕛 Eastern Time will 4 hours added will become 4:00AM 🕓 Eastern Time. The date will still be correct.
+Without changing time in a SQL data, the method recommended by James and Jeff will still work. 12:00AM 🕛 Eastern Time with 4 hours added will become 4:00AM 🕓 Eastern Time. The date remains the same.
 ___
 
-Whichever solution you choose, beware of 'time creep'. If you load a date from database to the front end, add 4 hours to the date so it gets displayed correctly in Eastern Time, and then <mark>save it back to the database, overwriting the original date</mark>, you run the risk of 'time creep'. Each save operation moves the time by 4 hours. 6 save operations will push your date in database to the next day 😱😱😱. So this front end 'move time' solution should never be used in conjunction with save operations.
+Whichever solution you choose, beware of 'time creep'. If you load a date from database to the front end, add 4 hours to the date so it gets displayed correctly in Eastern Time, and then <mark>save it back to the database, overwriting the original date</mark>, you run the risk of 'time creep' 🐛. Each save operation moves the time by 4 hours. 6 save operations will push your date in database to the next day 😱. So this front end 'move time' solution should never be used in conjunction with save operations.
 
