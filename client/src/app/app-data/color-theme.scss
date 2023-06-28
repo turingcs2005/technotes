@@ -1,0 +1,105 @@
+@import '@angular/material/theming';
+@include mat-core();
+
+// http://mcg.mbitson.com/ website to pull color palettes
+/* For use in src/lib/core/theming/_palette.scss */
+$custom-primary: (
+    50 : #e0e7ec,
+    100 : #b3c2cf,
+    200 : #809aaf,
+    300 : #4d728e,
+    400 : #265376,
+    500 : #00355e,
+    600 : #003056,
+    700 : #00284c,
+    800 : #002242,
+    900 : #001631,
+    A100 : #699aff,
+    A200 : #3677ff,
+    A400 : #0355ff,
+    A700 : #004be9,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$custom-accent: (
+    50 : #fef3e4,
+    100 : #fce2ba,
+    200 : #facf8d,
+    300 : #f8bc5f,
+    400 : #f7ad3c,
+    500 : #f59f1a,
+    600 : #f49717,
+    700 : #f28d13,
+    800 : #f0830f,
+    900 : #ee7208,
+    A100 : #ffffff,
+    A200 : #ffefe3,
+    A400 : #ffd1b0,
+    A700 : #ffc296,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$custom-theme-primary: mat-palette($custom-primary);
+$custom-theme-accent: mat-palette($custom-accent, A700, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+
+$primary: mat-color($custom-theme-primary, 500);
+$primary50: mat-color($custom-theme-primary, 50);
+$primary100: mat-color($custom-theme-primary, 100);
+$primary300: mat-color($custom-theme-primary, 300);
+$primary400: mat-color($custom-theme-primary, 400);
+$primary500: mat-color($custom-theme-primary, 500);
+$primary800: mat-color($custom-theme-primary, 800);
+
+$accent: mat-color($custom-theme-accent, 500);
+$accent50: mat-color($custom-theme-accent, 50);
+$accent100: mat-color($custom-theme-accent, 100);
+$accent300: mat-color($custom-theme-accent, 300);
+$accent500: mat-color($custom-theme-accent, 500);
+$accent800: mat-color($custom-theme-accent, 800);
+
+$accent100-5: mat-color($custom-theme-accent, 100, 0.05);
+$primary500-50: mat-color($custom-theme-primary, 500, 0.5);
+
+$warn: mat-color($custom-theme-warn, 500);
+
+$custom-theme-theme: mat-light-theme((
+  color: (
+    primary: $custom-theme-primary,
+    accent: $custom-theme-accent,
+    warn: $custom-theme-warn
+  )
+));
+
+@include angular-material-color($custom-theme-theme);

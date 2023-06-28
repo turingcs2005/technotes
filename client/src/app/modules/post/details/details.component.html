@@ -1,0 +1,18 @@
+<div *ngIf="post">
+	<div class="mat-h3 emphasize">
+		<a [href]="url" class="link">{{ post.title }}</a>
+	</div>
+
+	<div>Authors: <span *ngFor="let a of post.authors">{{ a }} &nbsp; &nbsp;</span></div>
+
+	<div>Keywords: <span *ngFor="let k of post.keywords">{{ k }} &nbsp; &nbsp;</span></div>
+
+	<div>{{ post.description }}</div>
+</div>
+
+<div class="float-button">
+		<button mat-fab color="accent"(click)="onEdit()"
+		matTooltip="edit"><mat-icon>edit</mat-icon></button> &nbsp; &nbsp; &nbsp; &nbsp;
+		<button mat-fab color="accent" (click)="onDelete()"
+		matTooltip="delete"><mat-icon>delete</mat-icon></button> 
+</div>

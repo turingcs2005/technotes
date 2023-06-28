@@ -1,0 +1,7 @@
+<span *ngIf="show">
+	<mat-label
+		[matTooltip]="toolTip">{{ label }}</mat-label> &nbsp;
+	<mat-radio-group [formControl]="control">
+		<mat-radio-button *ngFor="let x of values" [value]="x.value" [checked]="x.checked">{{ x.value }} &nbsp;</mat-radio-button> 
+	</mat-radio-group> &nbsp; &nbsp;
+</span>

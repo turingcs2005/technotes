@@ -1,0 +1,11 @@
+<p class="mat-h1">Mouse-over tips using HTML</p>
+
+<p>Angular Material library's <span matTooltip="matTooltip directive is a useful tool for displaying mouse-over tips. However, it only renders plain text." class="link">matTooltip</span> 
+	directive only allows tooltips in plain text. This is by design. Creating rich HTML mouse-over tooltips is fairly straightforward. You need to use two 
+	<span class="link" (mouseenter)="displayCDK_Tooltip()" (mouseout)="cdkTooltipOverlayRef.detach()" #cdk>Angular Material CDK</span> modules: </p>
+<ul>
+	<li>Portal</li>
+	<li>Overlay</li>
+</ul>
+
+<markdown mermaid src="../../../../assets/markdown/front-end/rich-html-tooltip.md"></markdown>

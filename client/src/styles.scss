@@ -1,0 +1,251 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'src/app/app-data/color-theme.scss';
+
+@font-face {
+  font-family: Oleo;
+  src: url('/assets/fonts/OeloScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Cookie;
+  src: url('/assets/fonts/Cookie-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: SourceCodePro;
+  src: url('/assets/fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url('/assets/fonts/FiraCode-Regular.tff') format('truetype');
+}
+
+.Oleo {
+  font-family: Oleo;
+}
+
+.Cookie {
+  font-family: Cookie;
+}
+
+.SourceCodePro {
+  font-family: SourceCodePro;
+}
+
+.FiraCode {
+  font-family: FiraCode;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.padded {
+  padding: 20px;
+}
+
+.narrow-input {
+  width: 100px !important;
+}
+
+.medium-input {
+  width: 150px !important;
+}
+
+.medium-plus1-input {
+  width: 200px !important;
+}
+
+.medium-plus2-input {
+  width: 250px !important;
+}
+
+.long-input {
+  width: 400px !important;
+}
+
+.form-section {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.with-icon {
+  display: flex;
+  vertical-align: middle;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.help {
+  cursor: help;
+}
+
+.link {
+  @extend .pointer;
+  color: $accent;
+  text-decoration: none;
+}
+
+.tool-tip {
+  @extend .help;
+  color: $accent;
+}
+
+.left-padded {
+  padding: 0 0 0 40px;
+}
+
+.width-75p {
+  width: 75%;
+}
+
+.emphasize {
+  color: $primary500;
+}
+
+.warn {
+  color: $warn;
+}
+
+.padded-with-smooth-corner {
+  padding: 0 5px 0 5px;
+  border-radius: 3px;
+}
+
+code {
+  @extend .padded-with-smooth-corner;
+  background-color: #fdf6e3;
+  font-family: monospace;
+  color: $primary;
+}
+
+mark {
+  @extend .padded-with-smooth-corner;
+  color: $primary300;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  .mat-mdc-table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      display: table;
+      border-collapse: collapse;
+      margin: 0px;
+  }
+  .mat-mdc-row,
+  .mat-mdc-header-row {
+      display: table-row;
+  }
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+      word-wrap: initial;
+      display: table-cell;
+      padding: 0px 5px;
+      line-break: unset;
+      width: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+      max-width: 200px;
+  }
+}
+
+.debug {
+  padding: 10px;
+}
+
+// .faded {
+//   color: $primary500-50;
+// }
+
+.underline {
+    text-decoration: underline;
+}
+
+.highlight {
+  color: $accent;
+}
+
+.line-break {
+  white-space: pre;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.float-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+// keyboard keys
+kbd {
+    position: relative;
+    display: inline-block;
+    border-radius: 0.125em;
+    padding: 0.2em 0.8em;
+    margin: 0.2em 0.1em;
+    background: linear-gradient(180deg, #888888, #202020);
+    box-shadow: inset -0.1em 0 0.1em rgba(0,0,0,0.15),
+    inset 0 -0.1em 0.1em rgba(0,0,0,0.25),
+    0 0 0 0.025em rgba(0,0,0,0.75),
+    0.125em 0.25em 0.3125em rgba(0,0,0,0.4);
+}
+
+kbd::before {
+  content: '';
+  position: absolute;
+  top: 0.0375em;
+  left: 0.05em;
+  bottom: 0.3em;
+  right: 0.3em;
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  border-radius: 0.125em;
+  box-shadow: -0.125em -0.125em 0.125em rgba(255,255,255,0.25), 
+  0.125em 0.0625em 0.125em rgba(0,0,0,0.15);
+  border-left: 1px solic #0004;
+  border-bottom: 1px solid #0004;
+  border-top: 1px solid #0009;
+}
+
+kbd i {
+  display: block;
+  padding: 0 0.15em 0.25em 0;
+  position: relative;
+  color: #fff;
+  font-style: normal;
+}
+
+.narrow-input {
+  width: 100px !important;
+}
+
+.medium-input {
+  width: 150px !important;
+}
+
+.medium-plus1-input {
+  width: 300px !important;
+}
+
+.medium-plus2-input {
+  width: 400px !important;
+}
+
+.long-input {
+  width: 600px !important;
+}

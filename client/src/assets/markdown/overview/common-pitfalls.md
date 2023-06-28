@@ -1,0 +1,35 @@
+## 2. Common pitfalls
+- Insufficient software requirement documents
+  - App data structure
+    - Overall app data structure (one-to-many mapping between a policy and an array of buildings)
+    - Fields entered by a user
+    - Fields acquired from internal databases
+    - Fields acquired from vendor APIs
+    - Field data format (date, string, number, etc.)
+  - UI design (usually in Excel or PPT)
+    - Page layout
+    - Navigation rules
+    - User inputs and their types (e.g. multi-choices, datepicker)
+    - UI meta data (e.g. dropdown menu items)
+  - Business rules
+    - Math calculation
+    - Reference tables
+    - Workflow rules (e.g. after use makes selection X, a new dropdown menu appears)
+- Absence of a product owner role
+	- end users and stakeholders send <i>ad hoc</i>, unvetted requirements to developers directly
+	- requirements are in conflict with each other
+	- developer confusion, frequent rework and wasted development effort
+- Product owner not being a subject matter expert (SME)
+	- severely underestimate a project's complexity
+	- requirements are vague with missing details
+	- constant project scope creep
+	- unrealistic development schedule
+- Constant scope creep
+	- no clearly defined project scope, or previously defined project scope is not observed
+	- additional features keep getting added to a project and project timeline keeps extending
+- Setting app delivery date before project scope is defined or requirements are created, vetted and reviewed
+	- this is like scheduling a move-in date before the blueprint of a dormitory has been created or a single brick has been laid down.
+	- developer has no idea what needs to be built and yet app release date has already been set
+- Product owner uses wrong media on requirement communication
+	- product owner uses emails, Teams chat, etc. to send <i>ad hoc</i> requests to developers.
+	- impossible to track down what features have been added/removed/changed to a piece of software and why.

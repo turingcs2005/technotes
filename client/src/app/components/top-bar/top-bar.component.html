@@ -1,0 +1,117 @@
+<mat-toolbar color="primary" class="mat-elevation-z12">
+
+  <div>
+    <mat-icon [matMenuTriggerFor]="appMenu" class="mat-elevation-z2"
+      matTooltip="menu"
+    >menu</mat-icon>
+  </div>
+
+  <div>Technical Notes on MEAN + SQL Stack</div>
+
+  <div>
+    <mat-icon [routerLink]="['/documentation']" class="mat-elevation-z2"
+      matTooltip="Developer resources"
+    >description</mat-icon> &nbsp;
+    <mat-icon [routerLink]="['/help']" class="mat-elevation-z2"
+      matTooltip="Help"
+    >help</mat-icon> &nbsp;
+  </div>
+
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/']"><mat-icon>home</mat-icon ></button>
+  <button mat-menu-item [matMenuTriggerFor]="postMenu"><mat-icon matTooltip="Post">post_add</mat-icon></button>
+  <button mat-menu-item [matMenuTriggerFor]="overviewMenu">Overview</button>
+  <button mat-menu-item [matMenuTriggerFor]="frontEndMenu">Front end</button>
+  <button mat-menu-item [matMenuTriggerFor]="backEndMenu">Back end</button>
+  <button mat-menu-item [matMenuTriggerFor]="databaseMenu">Database</button>
+  <button mat-menu-item [matMenuTriggerFor]="designPatternsMenu">Design patterns</button>
+  <button mat-menu-item [matMenuTriggerFor]="codingMenu">Coding</button>
+  <button mat-menu-item [matMenuTriggerFor]="toolingMenu">Tooling</button>
+  <button mat-menu-item [matMenuTriggerFor]="deployemntMenu">Deployment</button>
+  <button mat-menu-item [matMenuTriggerFor]="miscellaneousMenu">Miscellaneous</button>
+</mat-menu>
+
+<mat-menu #postMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/post']"><mat-icon>menu_book</mat-icon>About post</button>
+  <button mat-menu-item [routerLink]="['/post/list']"><mat-icon>search</mat-icon>Search posts</button>
+  <button mat-menu-item [routerLink]="['/post/add']"><mat-icon>add</mat-icon>Add a post</button>
+</mat-menu>
+
+<mat-menu #overviewMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/overview/technologies']">Technologies</button>
+  <button mat-menu-item [routerLink]="['/overview/software']">Software</button>
+  <button mat-menu-item [routerLink]="['/overview/programming-languages']">Programming languages</button>
+  <button mat-menu-item [routerLink]="['/overview/lifecycle']">Software lifecycle</button>
+  <button mat-menu-item [routerLink]="['/overview/team']">Team</button>
+</mat-menu>
+
+<mat-menu #frontEndMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/front-end/project-setup']">Project setup</button>
+  <button mat-menu-item [routerLink]="['/front-end/ts-node']">ts-node configuration</button>
+  <button mat-menu-item [routerLink]="['/front-end/useful-packages']">Useful packages</button>
+  <button mat-menu-item [routerLink]="['/front-end/debug']">Debugging</button>
+  <button mat-menu-item [routerLink]="['/front-end/color-theme']">Color theme</button>
+  <button mat-menu-item [routerLink]="['/front-end/custom-icon']">Custom icon</button>
+  <button mat-menu-item [routerLink]="['/front-end/custom-input']">Custom input</button>
+  <button mat-menu-item [routerLink]="['/front-end/safe-pipe']">Safe pipe</button>
+  <button mat-menu-item [routerLink]="['/front-end/markdown']">Markdown</button>
+  <button mat-menu-item [routerLink]="['/front-end/font-family']">Font family</button>
+  <button mat-menu-item [routerLink]="['/front-end/resources']">Resources</button>
+  <button mat-menu-item [routerLink]="['/front-end/geo-autofill']">Geo-autofill</button>
+  <button mat-menu-item [routerLink]="['/front-end/mouse-over-html']">Mouse-over HTML</button>
+  <button mat-menu-item [routerLink]="['/front-end/print-pdf']">Print PDF</button>
+  <button mat-menu-item [routerLink]="['/front-end/time-stamp']">Off by one day</button>
+</mat-menu>
+
+<mat-menu #backEndMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/back-end/project-setup']">Project setup</button>
+  <button mat-menu-item [routerLink]="['/back-end/useful-packages']">Useful packages</button>
+  <button mat-menu-item [routerLink]="['/back-end/debug']">Debugging</button>
+  <button mat-menu-item [routerLink]="['/back-end/saving-array']">Saving array</button>
+  <button mat-menu-item [routerLink]="['/back-end/geo-autofill']">Geo-autofill</button>
+  <button mat-menu-item [routerLink]="['/back-end/typescript-ESM']">TypeScript-ESM</button>
+  <button mat-menu-item [routerLink]="['/back-end/pdf-generator']">PDF generator</button>
+</mat-menu>
+
+<mat-menu #designPatternsMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/design-patterns/actuarial-rating']">Actuarial Rating</button>
+</mat-menu>
+
+<mat-menu #codingMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/coding/decorators']">Decorators</button>
+</mat-menu>
+
+<mat-menu #databaseMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/database/sql']">SQL</button>
+  <button mat-menu-item [routerLink]="['/database/mongodb']">MongoDB</button>
+  <button mat-menu-item [routerLink]="['/database/sequelize-transactions']">Sequelize Transactions</button>
+</mat-menu>
+
+<mat-menu #toolingMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="visualStudioCodeMenu">Visual Studio Code</button>
+  <button mat-menu-item [routerLink]="['/tooling/nvm']">Node version manager</button>
+  <button mat-menu-item [routerLink]="['/tooling/vim']">Vim editor</button>
+  <button mat-menu-item [routerLink]="['/tooling/git']">Git</button>
+</mat-menu>
+
+<mat-menu #deployemntMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/deployment/azure']">Azure deployment</button>
+  <button mat-menu-item [routerLink]="['/deployment/pm2']">PM2 deployment</button>
+</mat-menu>
+
+<mat-menu #miscellaneousMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/miscellaneous/publish']">Publish</button>
+  <button mat-menu-item [routerLink]="['/miscellaneous/software-upgrade']">Software Upgrade</button>
+  <button mat-menu-item [routerLink]="['/miscellaneous/emoji']">Emoji</button>
+  <button mat-menu-item [routerLink]="['/miscellaneous/docker']">Docker</button>
+  <button mat-menu-item [routerLink]="['/miscellaneous/create-pdf']">PDF Production: a comparison of approaches</button>
+  <button mat-menu-item [routerLink]="['/miscellaneous/python']">🐍 Python</button>
+</mat-menu>
+
+<mat-menu #visualStudioCodeMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/tooling/visual-studio-code/fira-code']">Fira Code Font</button>
+  <button mat-menu-item [routerLink]="['/tooling/visual-studio-code/extensions']">Extensions</button>
+  <button mat-menu-item [routerLink]="['/tooling/visual-studio-code/keyboard-shortcuts']">Keyboard shortcuts</button>
+</mat-menu>

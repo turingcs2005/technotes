@@ -1,0 +1,18 @@
+<p class="mat-h2">State, City and ZIP code with valiation</p>
+
+<form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
+    <app-state-city-zip
+        [stateControl]="$any(intakeForm.controls.state)"
+        [cityControl]="$any(intakeForm.controls.city)"
+        [zipCodeControl]="$any(intakeForm.controls.zipCode)"
+        [getStateList]="api.getStateList"
+        [getCityList]="api.getCityList"
+        [getZipCodeList]="api.getZipCodeList"
+    >
+    </app-state-city-zip>
+
+</form>
+
+<markdown
+	src="../../../../assets/markdown/front-end/geo-autofill.md">
+</markdown>

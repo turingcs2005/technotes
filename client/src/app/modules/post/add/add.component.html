@@ -1,0 +1,57 @@
+<div class="mat-h2">Add a new post</div>
+<p>Use this form to add post metadata to MongoDB database. A post is a markdown file. You need to create your 
+	markdown file and component before adding post metadata.
+</p>
+<form [formGroup]="intakeForm" (submit)="onSubmit()">
+
+	<app-input
+		label="Title"
+		[control]="$any(intakeForm.get('title'))"
+	></app-input> <br>
+
+	<app-multi-choices
+		label="Author(s)"
+		[choices]="authorList"
+		[control]="$any(intakeForm.controls.authors)"
+		size="long-input"
+	></app-multi-choices>
+
+	Author(s): <span *ngFor="let a of $any(intakeForm.controls.authors.value)" class="highlight">
+		{{ a }} &nbsp; &nbsp;
+	</span> <br><br>
+
+	<div>Separate your keywords with commas. <span class="tool-tip" matTooltip="Angular, TypeScript, front end">Example</span></div>
+	<app-input
+		label="Keyword(s)"
+		[control]="keywordsControl"
+		size="long-input"
+	></app-input>
+
+	Keyword(s): <span *ngFor="let a of $any(intakeForm.controls.keywords.value)" class="highlight">
+		{{ a }}  &nbsp;  &nbsp;
+	</span> <br>
+
+	<mat-form-field style="width: 600px;" appearance="outline">
+		<mat-label>Description</mat-label>
+		<textarea matInput [formControl]="$any(intakeForm.controls.description)" rows="4" placeholder="Description"></textarea>
+	</mat-form-field><br>
+
+	<app-input
+		label="URL to article"
+		[control]="$any(intakeForm.get('url'))"
+	></app-input>
+	
+	<div class="float-button">
+		<button mat-fab color="accent" type="submit" matTooltip="submit form"><mat-icon>done</mat-icon></button> &nbsp;
+		<button mat-fab color="accent" type="button" matTooltip="cancel" (click)="onCancel()"><mat-icon>cancel</mat-icon></button>
+	</div>
+</form>
+
+<!-- <button mat-raised-button color="accent" (click)="logForm()">Log form</button> -->
+
+
+
+
+
+
+

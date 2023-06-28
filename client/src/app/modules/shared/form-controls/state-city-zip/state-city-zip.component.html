@@ -1,0 +1,62 @@
+<!-- State -->
+<mat-form-field 
+	[matTooltip]="stateToolTip"
+	appearance="outline"
+	[ngClass]="stateSize">
+	<mat-label>{{ stateLabel }}</mat-label>
+	<input matInput  
+		[placeholder]="stateLabel" 
+		[formControl]="stateControl"
+		[matAutocomplete]="stateAuto"
+	/>
+
+	<mat-autocomplete autoActiveFirstOption #stateAuto="matAutocomplete">
+		<mat-option *ngFor="let option of filteredStateOptions | async" [value]="option">
+		{{option}}
+		</mat-option>
+	</mat-autocomplete>
+
+	<button *ngIf="stateIcon" matSuffix mat-icon-button disabled=true><mat-icon>{{ stateIcon }}</mat-icon></button>
+</mat-form-field> &nbsp; &nbsp;
+
+<!-- City  -->
+<mat-form-field 
+	[matTooltip]="cityToolTip"
+	appearance="outline"
+	[ngClass]="citySize">
+	<mat-label>{{ cityLabel }}</mat-label>
+	<input matInput  
+		[placeholder]="cityLabel" 
+		[formControl]="cityControl"
+		[matAutocomplete]="cityAuto"
+	/>
+
+	<mat-autocomplete autoActiveFirstOption #cityAuto="matAutocomplete">
+		<mat-option *ngFor="let option of filteredCityOptions | async" [value]="option">
+		{{option}}
+		</mat-option>
+	</mat-autocomplete>
+
+	<button *ngIf="cityIcon" matSuffix mat-icon-button disabled=true><mat-icon>{{ cityIcon }}</mat-icon></button>
+</mat-form-field> &nbsp; &nbsp;
+
+<!-- ZIP code -->
+<mat-form-field 
+	[matTooltip]="zipCodeToolTip"
+	appearance="outline"
+	[ngClass]="zipCodeSize">
+	<mat-label>{{ zipCodeLabel }}</mat-label>
+	<input matInput  
+		[placeholder]="zipCodeLabel" 
+		[formControl]="zipCodeControl"
+		[matAutocomplete]="zipCodeAuto"
+	/>
+
+	<mat-autocomplete autoActiveFirstOption #zipCodeAuto="matAutocomplete">
+		<mat-option *ngFor="let option of filteredZipCodeOptions | async" [value]="option">
+		{{option}}
+		</mat-option>
+	</mat-autocomplete>
+
+	<button *ngIf="zipCodeIcon" matSuffix mat-icon-button disabled=true><mat-icon>{{ zipCodeIcon }}</mat-icon></button>
+</mat-form-field> &nbsp; &nbsp;
