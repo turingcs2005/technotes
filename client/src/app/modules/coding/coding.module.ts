@@ -8,11 +8,13 @@ import { SecurityContext } from '@angular/core';
 import { CodingRoutingModule } from './coding-routing.module';
 import { CodingComponent } from './coding.component';
 import { DecoratorsComponent } from './decorators/decorators.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
     CodingComponent,
-    DecoratorsComponent
+    DecoratorsComponent,
+    ObservableComponent
   ],
   imports: [
     CommonModule,
