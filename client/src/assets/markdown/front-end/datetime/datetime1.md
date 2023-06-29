@@ -30,6 +30,8 @@ style computerTime fill: lightblue
 style ET text-align: left, fill: lightgreen 
 style CST text-align: left, fill: lightgreen
 ```
+To change the mapping from 1-to-26 to 1-to-1, a calendar time needs to identify the time zone. A datetime value in a database often will have a time zone offset to identify time zone.
+
 (There is also daylight saving to make things even more confusing, but let's ignore that.)
 
 ## 4. JavaScript gets timezone from your computer
