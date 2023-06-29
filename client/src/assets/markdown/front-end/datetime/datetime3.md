@@ -65,5 +65,5 @@ The Wolverson-Chesanek solution displays date correctly under almost all scenari
 let today = new Date();
 today.setHours(0, 0, 0, 0)
 ```
-This changes hours, minute, second and millisecond to 0, hence 12:00AM 🕛, as if you had picked today from a datepicker or typed in a date like 06/27/2023.
+This changes hours, minute, second and millisecond to 0, hence 12:00AM 🕛, as if you had picked a date from a datepicker or typed in a date like 06/27/2023.
 
