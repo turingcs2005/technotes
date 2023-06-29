@@ -56,7 +56,16 @@ The Wolverson-Chesanek solution displays date correctly under almost all scenari
 3. Scenario 3: A mix-up of datetime saved in different time zones across continental US. The Wolverson-Chesanek solution still works wonders.
    - If someone in Alaska saves a datetime and the record is later loaded by someone in Massachusetts, date displayed is still correct. Datetime saved as 12:00AM 🕛 AK will become 4:00AM 🕓 AK (after adding a 4-hour ET offset), which translates to 8:00 AM 🕗 ET of the same day.
    - Conversely, if someone in Massachusetts saves a datetime and the record is later loaded by someone in Alaska, date displayed is also correct. Datetime saved as 12:00AM 🕛 ET will become 8:00AM 🕗 ET (after adding an 8-hour AK offset), which is displayed as 4:00AM 🕓 AK time of the same day.
-
+4. Scenario 4: I only care about the date. Information in timestamp is irrelvant to my application. For example, a policy effective date's time zone can be inferred from the contract itself, so there's no need to use a timestamp. In this case, you may save all dates as 12:00AM 🕛 UTC regardless of client time zone.
+   1. Saving dates to a database
+      1. Change your date's hour, minute, second and millisecond to 0 using setHours(0, 0, 0, 0) to ensure it is 12:00AM 🕛 local time.
+      2. Perform a reverse Wolverson-Chesanek conversion (by subtracting time zone offset) to convert 12:00AM 🕛 local time to 12:00AM 🕛 UTC time.
+      3. Save the date to a database.
+   2. Reading dates from a database
+      1. Load a date from database to your web app.
+      2. Perform a Wolverson-Chesanek conversion to convert 12:00AM 🕛 UTC time to 12:00AM 🕛 local time.
+      3. Display the date on front end.
+   
 ## 4. Things to pay attention to when working with datetime in JavaScript and Angular
 - Time creep 👻. Whichever solution you choose, beware of 'time creep'. If you load a date from database to the front end, add 4 hours to the date so it gets displayed correctly in Eastern Time, and then <mark>save it back to the database, overwriting the original date</mark>, you run the risk of 'time creep' 🐛. Each save operation moves the time by 4 hours. 6 save operations will push your date in database to the next day 😱. So this front end 'move time' solution should never be used in conjunction with save operations.
 - Date() 📅 constructor (Kudos to Ryan D'entremont). When you use a datepicker in an Angular app, or type in a date such as 06/27/2023, the timestamp will always be 12:00AM local time zone. If you however call the JavaScript Date() constructor, the current time will be used. This will bring uncertainty as a user can be working anytime of the day. So the lesson is: avoid using Date() constructor on values that will be saved to database. If you have to, use the code below to avoid later display complication.
