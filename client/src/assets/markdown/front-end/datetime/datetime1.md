@@ -66,8 +66,8 @@ ___
 Mapping between a computer time (integer) and a calendar time (8-tuple) is [1-to-38](https://www.timeanddate.com/time/current-number-time-zones.html#:~:text=Currently%2038%20Different%20Local%20Times%20in%20Use), as there are [38 different time zones🌍](## "Several island nations created addtional time zones to accommodate their own needs, and hence we have 38 time zones instead of 24. There is also daylight saving to make things even more confusing, but let's ignore that.").
 
 Here is a mapping example: moment 1687897914083 💻 (milliseconds since the epoch) is mapped to 2 of the 38 time zones:
-- ET 💻 ( Eastern Time 🇺🇸)
-- CST (China Standard Time)
+- ET ( Eastern Time 🇺🇸)
+- CST (China Standard Time 🇨🇳)
 
 <table>
 	<tr>
@@ -88,7 +88,7 @@ Here is a mapping example: moment 1687897914083 💻 (milliseconds since the epo
 		<td colspan="8"></td>
 	</tr>
 	<tr>
-		<td>🌎 ET</td>
+		<td>🌎 🇺🇸 ET</td>
 		<td></td>
 		<td>2023</td>
 		<td>6</td>
@@ -100,7 +100,7 @@ Here is a mapping example: moment 1687897914083 💻 (milliseconds since the epo
 		<td class="navy">240</td>
 	</tr>
 	<tr>
-		<td>🌏 CST</td>
+		<td>🌏 🇨🇳 CST</td>
 		<td></td>
 		<td>2023</td>
 		<td>6</td>
