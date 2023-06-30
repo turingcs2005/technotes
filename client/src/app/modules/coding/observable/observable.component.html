@@ -1,27 +1,13 @@
-<mat-expansion-panel>
+<h1>Observable and rxjs library</h1>
+
+<mat-expansion-panel *ngFor="let s of sections; index as i">
 	<mat-expansion-panel-header>
 		<mat-panel-title>
-			What is an observable?
+			{{i + 1}}. {{ s }}
 		</mat-panel-title>
 	</mat-expansion-panel-header>
 	<markdown
 		mermaid
-		src="../../../../assets/markdown/coding/observable/observable1.md">
+		[src]="'../../../../assets/markdown/coding/observable/observable' + (i+1) + '.md'">
 	</markdown>
-</mat-expansion-panel>
-
-<mat-expansion-panel>
-	<mat-expansion-panel-header>
-		<mat-panel-title>
-			
-		</mat-panel-title>
-	</mat-expansion-panel-header>
-</mat-expansion-panel>
-
-<mat-expansion-panel>
-	<mat-expansion-panel-header>
-		<mat-panel-title>
-			
-		</mat-panel-title>
-	</mat-expansion-panel-header>
 </mat-expansion-panel>

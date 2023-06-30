@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./observable.component.scss']
 })
 export class ObservableComponent {
-
+  sections = [
+    'Asynchronous architecture in JavaScript',
+    'What is an observable?'
+  ]
 }
