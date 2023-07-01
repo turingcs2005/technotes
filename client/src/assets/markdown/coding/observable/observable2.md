@@ -4,8 +4,7 @@
         color: navy;
         background-color: beige;
         border-radius: 10px;
-        padding: 30px 30px;v => {
-    console.log(v);
+        padding: 30px 30px;
     }
 
 			table, th, td {

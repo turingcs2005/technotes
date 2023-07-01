@@ -12,5 +12,7 @@ export class ObservableComponent {
     'The Observable class',
     'The Observer interface',
     'The Subscription class',
+    'rxjs operators',
+    'The Subject class'
   ]
 }

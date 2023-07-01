@@ -1,4 +1,4 @@
-An obect of Subscription class is returned by invoking the subscribe() method on an Observable. An object of Subscription class represents a connection between an Observable and an Observer created by the subscribe() method. It provides 2 methods for subscription management:
+An object of the Subscription class is returned by invoking the subscribe() method on an Observable. A Subscription represents a connection between an Observable and an Observer created by the subscribe() method. It provides 3 methods for subscription management:
 - unsubscribe(): cancel subscription and release resources. 
 - add(childSubscription): add a child subscription, is if a parent subscription unsubscribes, so does the child.
 - remove(childSubscription): remove a previously-added child subscription, so if the parent unsubscribes, child is not affected. 
@@ -29,7 +29,6 @@ import { interval, take, pipe, map, timer } from 'rxjs';
 const parentBeverages = ["🍷", "🍹", "🍺", "🍶"];
 const childBeverages = ["🥛", "🧃", "🥥", "🍵"];
 
-
 // interval(1000) emits 0, 1, 2, ... every 1 second
 let parentSubscription = interval(1000).pipe(    // take an observable for processing
     take(parentBeverages.length),  
@@ -54,3 +53,5 @@ setTimeout( () => {
 // 🥛
 // 🍹
 ```
+
+You can add multiple child Subscriptions to a single parent Subscription and unsubscribe the whole family in one go.
