@@ -51,4 +51,3 @@ AcceptFood --> ServeFood("👨 Waitress serves food")
 ```
 
 An asynchronous architecture is vastly superior 👍 to a synchronous one in this scenario. Instead of idling at customer 1's table, the waitress can take orders from customer 2, customer 3... while food is being prepared for customer 1. This is how a restaurant operates in real life.
-

@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class ObservableComponent {
   sections = [
     'Asynchronous architecture in JavaScript',
-    'What is an observable?'
+    'Observable is the current standard for asynchronous operations',
+    'The Observable class',
+    'The Observer interface',
+    'The Subscription class',
   ]
 }
