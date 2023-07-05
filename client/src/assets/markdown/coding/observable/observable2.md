@@ -90,6 +90,8 @@ Now let's compare these meals.
 
 - A function is synchronous. It accepts arguments and return a single value.
 - A Promise handles a single asynchronous event.
-- An Observable can handle multiple asynchronous events.
+- An Observable can handle multiple asynchronous events, among other things.
 
-While both Promises and Observables help us work with asynchronous functionalities, an Observable does everything a Promise does, plus a lot more. It can emit 0, 1 or any number of events either synchronously, asynchronously, or a mix of the two. <span class="emphasize">Modern JavaScript libraries such as Angular's HttpClient module have adopted Observable as the standard. We should also use Observables to handle asynchoronous operations.</span> The rxjs JavaScript library, a core subject of this tutorial, provides tools for working with Observables.
+While both Promises and Observables help us work with asynchronous functionalities, an Observable does everything a Promise does, plus a lot more. It can emit 0, 1 or any number of events either synchronously, asynchronously, or a mix of the two. Contrary to popular belief, an Observable is not just for handling multiple asynchronous events. Angular's Reactve Form library is built in Observables with synchronous operations.
+
+<span class="emphasize">We should adopt Observables for handling value streams</span> like other modern JavaScript/TypeScript libraries.

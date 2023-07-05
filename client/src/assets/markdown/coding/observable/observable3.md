@@ -60,8 +60,10 @@ ___
 
 ## 3.1 Creating Observables
 Using the restaurant meal example, 
-- An Observer is like a restaurant serving food
-- An observer (or subscriber) is like a customer consuming food.
+- Observable: restaurant serving food
+- Observer: customer consuming food
+
+An Observer subscribing to an Observable is called a subscriber. A subscriber implements the Observer interface and provides a few additional functionalities such as unsubscribe(), add(), and remove().
 
 ### 3.1.1 Creating Observables using creation operators
 By convention, an Observable name ends with a $.
