@@ -60,7 +60,7 @@ style Extensions text-align: left
       2. Double-click on the notebook you just created.
       3. It will ask whether to trust the source. Select trust. 
       4. Then it will prompt you to install ipykernel package. This may take a while.
-      5. Once it is done, you should be able to use Jupyter Notebook for Python coding.
+      5. Once it is done, select Python kernel using a button at the top-right. Select the conda base environment Now you should be able to use Jupyter Notebook for Python coding.
       6. A few basic tips on Jupyter Notebook. (If you need help, reach out to the data scientists [👩](mailto:jdoyle@hanover.com) [👧](mailto:lscott@hanover.com) [👦](mailto:gmack@hanover.com)):
          - Move your mouse below a cell (middle part). Two buttons will appear for you to create a new code cell (for Python code) or markdown cell (for Markdown documentation)
          - Click on a cell and a menu should appear on the upper right of the cell. There should be a trash can icon for deleting the cell.
