@@ -34,20 +34,15 @@ style Extensions text-align: left
 3. Connect to Azure Linux Virtual Machine.
    1. Create your SSH configuration file.
       1. Click a double-arrow icon on the lower-left corner of VSC (it displays 'Open a Remote Window' on mouseover) &rarr; Connect to Host... &rarr; Configure SSH Hosts... &rarr; Choose C:\\Users\\<mark>rxw509</mark>\\.ssh\\config 
-      2. paste the following text into the cofiguration file:
-	<pre>
-		Host AI_Academy
-			HostName 10.93.3.54
-			User <mark>rxw509</mark>
-			IdentityFile C:\Users\<mark>rxw509</mark>\.ssh\id_rsa
-	</pre>
+      2. paste the following text into the cofiguration file: 
+      >Host AI_Academy<br>&nbsp;&nbsp;&nbsp;&nbsp;HostName 10.93.3.54<br>&nbsp;&nbsp;&nbsp;&nbsp;User <mark>rxw509</mark><br>&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile C:\Users\<mark>rxw509</mark>\.ssh\id_rsa
       3. Press Ctrl + s ⌨️ to save the configuration file.
-   2. Connect to Azure Linux Virtual MachineNow.
+   2. Connect to Azure Linux Virtual Machine.
       1. Click on the same double-arrow icon again &rarr; Connect to Host... &rarr; AI_Academy
       2. Connection may take a couple minuites
       3. If you encounter an SSH error, please reach out to Margo so she can check your ssh key.
 4. Initialize your personal conda environment on the virtual machine
-   1. Press Ctrl + ~ ⌨️ to launch Linux terminal (Ctrl + ~ ⌨️ again to dismiss terminal).
+   1. Press Ctrl + ~ ⌨️ to launch Linux terminal (Ctrl + ~ ⌨️ again to dismiss terminal). The ~ key is located at the upper-left corner of your keyboard.
    2. Initialize your conda environment
 		<pre><code class="command-line">conda init</code></pre>
    3. Exit the terminal using the <code class="command-line">exit</code> command (or trash can icon on the right) and relaunch terminal using Ctrl + ~ ⌨️. 
