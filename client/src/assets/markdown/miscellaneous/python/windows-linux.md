@@ -13,10 +13,10 @@ Select --> Create(Create notebook)
 style Extensions text-align: left
 ```
 
-1. Email your public ssh key file 🔑 to [Margo Stepka](mailto:mstepka@hanover.com) :glasses
+1. Email your public ssh key file 🔑 to [Margo Stepka](mailto:mstepka@hanover.com) 
    - If you have used .ssh before on this computer, the file can be located at C:\\Users\\<mark>rxw509</mark>\\.ssh\\id_rsa.pub
    - If you don't see a .ssh directory under your LAN ID directory:
-     1. launch a Command Prompt (Search for Command Prompt in your Windows search box&mdash;the magnifying glass icon on lower-left corner. The icon for Command Prompt app is a black window.)
+     1. launch the Command Prompt (Search for Command Prompt in your Windows search box&mdash;the magnifying glass icon on lower-left corner. The icon for Command Prompt app is a black window.)
      2. Launch the app and you should already be under your personal directory C:\Users\\<mark>rxw509</mark>\\
      3. create a new directory .ssh
 		<pre><code class="command-line">mkdir .ssh</code></pre>
@@ -25,6 +25,7 @@ style Extensions text-align: left
      5. Create your SSH key pair using the command below
 		<pre><code class="command-line">ssh-keygen -t rsa -b 2048</code></pre>
      6. Now email Margo your id_rsa.pub file. You may need to unhide hidden directories in your Windows Explorer.
+      >Never send out your private key. Public key is for encoding while private key is for decoding.
 2. Install [Visual Studio Code](https://code.visualstudio.com/download) and extensions on your Windows computer.
    1. Download Windows user installer for x64 CPU architecture and install it on your laptop. We do not have administrative access on our laptops, so you need to install it under your personal directory (which should be the default).
    2. Launch Visual Studio Code and install the following 3 extensions. The installation may take a couple minutes. (You may also uncheck the Welcome Screen at the bottom of the Welcome Screen so next time you launch VSC, you won't be greeted by the same screen):
@@ -60,7 +61,7 @@ style Extensions text-align: left
       2. Double-click on the notebook you just created.
       3. It will ask whether to trust the source. Select trust. 
       4. Then it will prompt you to install ipykernel package. This may take a while.
-      5. Once it is done, select Python kernel using a button at the top-right. Select the conda base environment Now you should be able to use Jupyter Notebook for Python coding.
+      5. Once it is done, select Python kernel using a button at the top-right. Select the conda base environment. Now you should be able to use Jupyter Notebook for Python coding.
       6. A few basic tips on Jupyter Notebook. (If you need help, reach out to the data scientists [👩](mailto:jdoyle@hanover.com) [👧](mailto:lscott@hanover.com) [👦](mailto:gmack@hanover.com)):
          - Move your mouse below a cell (middle part). Two buttons will appear for you to create a new code cell (for Python code) or markdown cell (for Markdown documentation)
          - Click on a cell and a menu should appear on the upper right of the cell. There should be a trash can icon for deleting the cell.
