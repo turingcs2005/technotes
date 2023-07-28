@@ -6,12 +6,11 @@
 - [mermaid guide](https://mermaid-js.github.io/mermaid/#/)
 
 ## Install ngx-markdown, prismjs, mermaid and katex
-1. Install 3 npm packages <pre class="command-line"><code>npm i PACKAGE_NAME</code></pre>
+1. Install 4 npm packages <pre class="command-line"><code>npm i PACKAGE_NAME</code></pre>
 	- ngx-markdown (for rendering static markdown files)
 	- prismjs (for programming language syntax highlighting)
+	- mermaid (for charting)
 	- katex (for math formulas)
-	- mermaid (for charting
-	- )
 	
 2. Edit angular.json file
 	- Append code below to build/scripts:
@@ -68,7 +67,7 @@ YOUR CHART<br>
 \`\`\`
 
 7. To render source code, there are two options:<br>
-   1. Render source code in markdown file
+   1. Render source code in a markdown file. You have to copy your source code to a markdown file and specify the type of the code (e.g. javascript, typescript, latex, etc.).<br>
 	\`\`\`LANGUAGE<br>
 	YOUR SOURCE CODE<br>
 	\`\`\`<br>
@@ -78,8 +77,7 @@ YOUR CHART<br>
 	"node_modules/prismjs/components/prism-typescript.min.js",
 	"node_modules/prismjs/components/prism-javascript.min.js"
 	```
-   2. Render source code in your html template via <markdown> tag
-	Alternatively, you may directly import a source code file in your template. Your file extension will trigger the correct prismjs syntax highlighting.
+   2. Render source code in html template by importing a source code file. (Your file extension will trigger the correct prismjs syntax highlighting, so there's no need to specify the type of code.)
 	```html
 	<markdown
 		src="../../../assets/markdown/home/test.tex"
