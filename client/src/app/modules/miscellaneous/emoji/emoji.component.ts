@@ -9,7 +9,8 @@ export class EmojiComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    console.log('%c 👍 emoji component instantiated.', 'background: green; color: white')
   }
 
 }
