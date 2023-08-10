@@ -3,18 +3,25 @@
 > Whether to use Vim is completely up to you. It takes months of practice to develop muscle memory. Experienced Vim users edit source code with improved efficiency and precision; some people hate it.
 
 ___
+
 ### Visual Studio Code Vim extension
+
 Disable Vim's keyboard shortcuts to avoid conflict with Visual Studo Code's shortcuts. For example: <kbd><i>ctrl</i></kbd>  <kbd><i>k</i></kbd> &rarr; <kbd><i>z</i></kbd> in Visual Studio Code toggles zen mode. <kbd><i>Ctrl </i></kbd> <kbd><i>k</i></kbd> is for entering digraphs (special characters). Without disabling Vim keyboard shortcut, you won't be able to use Visual Studio Code keyboard shortcut to toggle zen mode, because <kbd><i>Ctrl</i></kbd>  <kbd><i>k</i></kbd> is intercepted by Vim. To disable <kbd><i>Ctrl</i></kbd>  <kbd><i>k</i></kbd> in Vim, add the following to your Visual Studio Code settings:
+
 ```javascript
 /* disable Ctrl + k in Vim so you can use Ctrl + k in Visual Studio Code */
 "vim.handleKeys": {
 	"<C-k>": false
 }
 ```
+
 ---
+
 ### Vim Modes 
+
 - Normal mode, activated via <kbd><i>Esc</i></kbd> key
 - Insert mode, activated via <kbd><i> a</i></kbd> / <kbd><i> A</i></kbd> / <kbd><i> i</i></kbd> / <kbd><i> I</i></kbd> / <kbd><i> o</i></kbd> / <kbd><i>O</i></kbd> keys
+- 
 - Replace mode, activated via <kbd><i>R</i></kbd> key
 - Visual modes, for text selection. There are 3 visual modes
 	- standard visual mode, activated by <kbd><i>v</i></kbd> key, where you select code by characters
@@ -23,16 +30,21 @@ Disable Vim's keyboard shortcuts to avoid conflict with Visual Studo Code's shor
 	- <kbd><i>g</i></kbd> &rarr; <kbd><i>v</i></kbd>, where you recall the last visual mode on the same selected area
 - Search mode, activated via <kbd><i>/</i></kbd> (search forward), <kbd><i>?</i></kbd> (search backward); deactivate (to normal mode) via <kbd><i>/</i></kbd> &rarr; <kbd><i>Esc</i></kbd>
 - Command mode, activated via <kbd><i>:</i></kbd>, where you can perform a wide variety of commands.
+  
 ---
+
 <mark>word</mark> vs. <mark>WORD</mark><br>
 A <mark>word</mark> is a string consists only of, letter, number and underscore. In contrast a <mark>WORD</mark> consists of anything but whitespace. For example: 'long-term' is 3 <mark>words</mark>, but only 1 <mark>WORD</mark>. <br>
 Vim key bindings involving <mark>word</mark> &amp; <mark>WORD</mark>:
+
 - <kbd><i>w</i></kbd> / <kbd><i>W</i></kbd>: move forward by 1 <mark>word</mark> / <mark>WORD</mark>
 - <kbd><i>e</i></kbd> / <kbd><i>E</i></kbd>: move to the end of <mark>word</mark> / <mark>WORD</mark>
 - <kbd><i>b</i></kbd> / <kbd><i>B</i></kbd>: move backword by 1 <mark>word</mark> / <mark>WORD</mark>
+
 ---
 
 ### Vim Key Bindings
+
 - Navigation
 	- <kbd><i>k</i></kbd> / <kbd><i>j</i></kbd> / <kbd><i>h</i></kbd> / <kbd><i>l</i></kbd>: equivalent to <kbd><i>&#708;</i></kbd> / <kbd><i>&#709;</i></kbd> / <kbd><i>&#706;</i></kbd> / <kbd><i>&#707;</i></kbd> but easier to access
 	- <kbd><i>z</i></kbd> <kbd><i>z</i></kbd> / <kbd><i>z</i></kbd>  <kbd><i> t </i></kbd> / <kbd><i>z</i></kbd>  <kbd><i>b</i></kbd>: shift the current line (with cursor) to the middle/ top/ bottom of screen
@@ -81,6 +93,7 @@ Vim key bindings involving <mark>word</mark> &amp; <mark>WORD</mark>:
 ---
 
 ### Pattern Search and Substitution
+
 - Pattern search
 	- <kbd><i>/</i></kbd> &rarr; <kbd><i>PATTERN</i></kbd>: search for pattern forward
 	- <kbd><i>?</i></kbd> &rarr; <kbd><i>PATTERN</i></kbd>: search for pattern backward
@@ -101,10 +114,13 @@ Vim key bindings involving <mark>word</mark> &amp; <mark>WORD</mark>:
 	- a: substitute all remaining
 	- q: quit substitution
 	- l: replace current and quit
+
 ___
 
 ### Marks
+
 Marks allow a user to save current selection.
+
 - Set a mark
 	- <kbd><i>m</i></kbd> followed by a lowercase (for local mark) or uppercase letter (for global mark).
 - Types of marks
@@ -125,7 +141,9 @@ Marks allow a user to save current selection.
 ---
 
 ### Macros
+
 Vim plugin in Visual Studio Code does not yet offer full macro functionalities of vanilla Vim.
+
 - To record a macro, press <kbd><i>q</i></kbd> plus a lowercase letter (e.g. <kbd><i>a</i></kbd>), then perform some operations such as appending text.
 - Press <kbd><i>q</i></kbd> again to stop recording.
 - Use <kbd><i>@</i></kbd><kbd><i>a</i></kbd> to repeat the saved macro.
@@ -144,7 +162,9 @@ Alternatively, a simpler solution is to use visual block mode to perform [multil
 ___
 
 ### Command Mode
+
 In addition to commands covered already, below are a list of file/buffer manipulation commands:
+
 - <code>:q</code>: close current buffer
 - <code>:w</code>: save 
 - <code>:wq</code>: save and close
@@ -152,6 +172,7 @@ In addition to commands covered already, below are a list of file/buffer manipul
 - <code>:qa!</code>: close all buffers without saving
 - <code>:wqa</code>: save all buffers and close
 - <code>:e!</code>: discard buffer and reopen file from disk
+
 ---
 
 ### Viewport
@@ -165,6 +186,7 @@ In addition to commands covered already, below are a list of file/buffer manipul
 ---
 
 ### Visual Mode
+
 - Key bindings
 	- <kbd><i>u</i></kbd> / <kbd><i>U</i></kbd>: to lower/upper case
 	- <kbd><i>d</i></kbd> / <kbd><i>c</i></kbd> / <kbd><i>y</i></kbd>: delete/replace/yank
