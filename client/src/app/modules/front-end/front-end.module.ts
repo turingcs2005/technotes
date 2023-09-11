@@ -23,6 +23,9 @@ import { PrintPdfComponent } from './print-pdf/print-pdf.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { ColorThemeComponent } from './color-theme/color-theme.component';
 import { TimeStampComponent } from './time-stamp/time-stamp.component';
+import { CalculatedFieldsComponent } from './calculated-fields/calculated-fields.component';
+import { SalaryPipe } from './pipes/salary.pipe';
+import { TestPipe } from './pipes/test.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { TimeStampComponent } from './time-stamp/time-stamp.component';
     PrintPdfComponent,
     CustomInputComponent,
     ColorThemeComponent,
-    TimeStampComponent
+    TimeStampComponent,
+    CalculatedFieldsComponent,
+    SalaryPipe,
+    TestPipe
   ],
   imports: [
     CommonModule,

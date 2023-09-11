@@ -1,0 +1,42 @@
+<div class="mat-h1">
+    Calculated fields using impure pipe
+</div>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            1. Introduction
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown
+        src="../../../../assets/markdown/front-end/calculated-fields/introduction.md"
+    ></markdown>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            2. Sample intake form
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
+        <app-input label="Team Name" [control]="$any(intakeForm.controls['teamName'])"></app-input> &nbsp; 
+        <app-input label="Manager Name" [control]="$any(intakeForm.controls['managerName'])"></app-input> <br>
+
+        <div>Players</div>
+        <div formArrayName="players">
+            <div *ngFor="let p of $any(intakeForm.controls['players']).controls; let i = index"
+                [formGroupName]="i"
+            >
+                <app-input label="Player Name" [control]="$any(p.controls['playerName'])"></app-input> &nbsp;
+                <app-input label="Salary" [control]="$any(p.controls['salary'])"></app-input> <br>
+            </div>
+        </div>
+
+        <div>Total player salary: {{ ($any(intakeForm.controls['players'])) |  salary }}</div>
+        <br>
+
+        <button mat-mini-fab type="submit"><mat-icon>done</mat-icon></button>
+    </form>
+</mat-expansion-panel>

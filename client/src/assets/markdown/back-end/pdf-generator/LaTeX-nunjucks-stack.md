@@ -19,45 +19,10 @@ flowchart TB
 
 ## 1. Install LaTeX compiler
 For Ubuntu, execute the two lines of code:
-1. <pre class="command-line"><code>sudo apt install texlive-full</code></pre>
-2. <pre class="command-line"><code>sudo apt install texlive-luatex</code></pre>
-(Lualatex compiler offers more advanced features such as emoji.)
+<pre class="command-line"><code>sudo apt install texlive-full</code></pre>
+The texlive-full installation should have included lualatex compiler, which offers more advanced features such as emoji.
 
-## 2. Configure Visual Studio Code
-- Install <mark>LaTeX workshop</mark> extension so you can 
-  - review PDF documents in Visual Studio Code;
-  - use syntax highlighting while building LaTeX templates.
-- Add the following code to your user settings so lualatex is the default compiler
-	```json
-	// configure latex workshop recipe
-	"latex-workshop.latex.tools": [
-		{
-		"name": "lualatex",
-		"command": "lualatex",
-		"args": [
-			"-shell-escape", 
-			"-synctex=1",
-			"-interaction=nonstopmode",
-			"-file-line-error",
-			"-pdf",
-			"-output-directory=%OUTDIR%",           
-			"%DOC%"
-		],
-		"env": {}
-		}
-
-	],        
-	"latex-workshop.latex.recipes": [
-		{
-			"name": "lualatex",
-			"tools": [
-				"lualatex"
-			]
-		}
-	]
-	```
-
-## 3. Create and configure a project
+## 2. Create and configure a project
 1. Create a project with directories
    ```
    Project

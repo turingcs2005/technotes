@@ -16,6 +16,7 @@ import { PrintPdfComponent } from './print-pdf/print-pdf.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { ColorThemeComponent } from './color-theme/color-theme.component';
 import { TimeStampComponent } from './time-stamp/time-stamp.component';
+import { CalculatedFieldsComponent } from './calculated-fields/calculated-fields.component';
 
 const routes: Routes = [
   { path: '', component: FrontEndComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'custom-input', component: CustomInputComponent },
   { path: 'color-theme', component: ColorThemeComponent },
   { path: 'time-stamp', component: TimeStampComponent },
+  { path: 'calculated-fields', component: CalculatedFieldsComponent },
 ];
 
 @NgModule({
