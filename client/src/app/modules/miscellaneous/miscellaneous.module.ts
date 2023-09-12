@@ -12,6 +12,7 @@ import { SoftwareUpgradeComponent } from './software-upgrade/software-upgrade.co
 import { CreatePdfComponent } from './create-pdf/create-pdf.component';
 import { PythonComponent } from './python/python.component';
 import { SharedModule } from '../shared/shared.module';
+import { RemoteDesktopComponent } from './remote-desktop/remote-desktop.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     PublishComponent,
     SoftwareUpgradeComponent,
     CreatePdfComponent,
-    PythonComponent
+    PythonComponent,
+    RemoteDesktopComponent
   ],
   imports: [
     CommonModule,

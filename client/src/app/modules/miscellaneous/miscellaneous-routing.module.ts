@@ -7,6 +7,7 @@ import { PublishComponent } from './publish/publish.component';
 import { SoftwareUpgradeComponent } from './software-upgrade/software-upgrade.component';
 import { CreatePdfComponent } from './create-pdf/create-pdf.component';
 import { PythonComponent } from './python/python.component';
+import { RemoteDesktopComponent } from './remote-desktop/remote-desktop.component';
 
 const routes: Routes = [
   { path: '', component: MiscellaneousComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'software-upgrade', component: SoftwareUpgradeComponent },
   { path: 'create-pdf', component: CreatePdfComponent },
   { path: 'python', component: PythonComponent },
+  { path: 'remote-desktop', component: RemoteDesktopComponent },
 ];
 
 @NgModule({
