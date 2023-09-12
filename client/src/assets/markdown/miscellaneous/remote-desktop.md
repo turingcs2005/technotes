@@ -35,7 +35,7 @@ Windows --> |RDP| Linux
    2. Search for Chrome in the search bar at the top.
    3. Launch Chrome, navigate to AI Academy, log in and download your class bundle (.zip file)
    4. Search for Files and launch File Explorer.
-   5. Click into 'Downloads' directory, double click on the downloaded class bundle and extra its contents to your class directory (For example, I use /rxw509/Python/AI_Academy/week10).
+   5. Click into 'Downloads' directory, double click on the downloaded class bundle and extract its contents to your class directory (For example, I use /rxw509/Python/AI_Academy/week10).
    6. Now you should be able to access all files via Visual Studio Code on the Linux server. You may close the remote desktop session.
 
 If you run into troubles, please feel free to reach out to Margo, Jackie or Rui.
