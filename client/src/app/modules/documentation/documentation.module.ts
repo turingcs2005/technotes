@@ -13,7 +13,7 @@ import { SecurityContext } from '@angular/core';
   imports: [
     CommonModule,
     DocumentationRoutingModule,
-      MarkdownModule.forRoot({
+    MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE
     }),
     MarkdownModule.forChild()

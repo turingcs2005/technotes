@@ -115,11 +115,8 @@ server/.env
 # next.js build output
 server/.next
 
-# compiled server JavaScript code
+# compiled server-side JavaScript code
 server/dist/
 
 # compiled Angular front end
-server/angular 
-
-# temporary directory for back end conversion from JavaScript to TypeScript
-server_old
+server/angular
