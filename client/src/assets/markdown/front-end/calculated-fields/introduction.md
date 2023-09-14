@@ -1,12 +1,183 @@
-The need to display calculated fields on the front end is ubiquitous in Angular apps. 
+___
 
-- A Reactive Form accepts data from a user; the form can can also be populated via database calls or API calls.
-- Some values are calculated from the form fields and displayed on the UI.
-- Changes to calculated fields (e.g. a user selects a different value from a dropdown menu) need to be reflected on the UI.
+## 1 Introduction
 
-The challenge lies in the fact that Angular component is not intelligent enough to figure out what value changes affect which UI artifacts. An UI event, even one that has zero impact on calculated values or displayed values (e.g. mouseover tip), will trigger a change detection cycle. All functions (including getters) will be invoked blindly to recalculate values. Even functions defined outside of a component&mdash;for example functions defined in a service or a standalone TypeScript file, will be reinvoked at each change detection cycle. 😱 This is not only inefficient but also greatly increases debugging difficulties. 
+We often have Reactive Forms in an Angular app with calculated values derived from form data and reference tables.
 
-Our solution is to avoid function calls altogether, and render calculated values via pure pipes.
+- A user may enter/edit data in a form group. Form data may also be populated from database/API calls.
+- Calculated values are rendered in UI.
+- User changes to a form (e.g. selecting a different value from a dropdown list) are reflected in UI.
+- Calculation often requires metadata (e.g. lookup tables).
 
-Another option is to adopt 'on-push' change detection strategy and write code to proactively trigger change detection for expected input changes. This strategy requires exessive coding and incurs high software maintenance cost.
+```mermaid
+flowchart LR
+classDef database color: white, fill: darkred
+classDef comp color: white, fill: navy, text-align: left
+classDef cls color: white, fill: darkgreen, text-align: left
+classDef svc color: white, fill: purple, text-align: left
 
+MongoDB[(MongoDB<br>Database)]:::database -->|refrence tables| ModelDefinition(Model Definition<br>-Interfaces<br>-Classes<br>-Business Logics):::cls
+ModelDefinition --> |interface, class| FormFactory{{Form Factory Service<br>-Form Group<br>-Data Object}}:::svc
+FormFactory --> |form group, data object| Form1(Form Component 1):::comp
+FormFactory --> |form group, data object| Form2(Form Component 2):::comp
+FormFactory --> |form group, data object| Form3(Form Component 3):::comp
+
+```
+
+___
+
+## 2 Interface and Class Definition
+
+Defining data structure should always come first.
+
+```typescript
+import { FormControl, FormGroup, FormArray, Validators } from "@angular/forms";
+
+export interface IPlayer {
+    playerName: string | null,
+    salary: number | null
+}
+
+// A wrapper class allows convenient access and manipulation of form controls and easy implementation of business logics
+export class Player implements IPlayer {
+
+    constructor(
+        public playerForm: FormGroup
+    ) { }
+
+    get playerName(): string | null {
+        return this.playerForm.controls['playerName'].value;
+    }
+
+    get salary(): number | null {
+        return this.playerForm.controls['salary'].value;
+    }
+
+    set playerName(v: string | null) {
+        this.playerForm.controls['playerName'].setValue(v);
+    }
+
+    set salary(v: number | null) {
+        this.playerForm.controls['salary'].setValue(v);
+    }
+
+}
+
+export interface ITeam {
+    teamName: string | null,
+    managerName: string | null,
+    players: Player[] | null
+}
+
+export class Team implements ITeam {
+    constructor(
+        public teamForm: FormGroup
+    ) { }
+
+    get teamName(): string | null {
+        return this.teamForm.controls['teamName'].value;
+    }
+
+    get managerName(): string | null {
+        return this.teamForm.controls['managerName'].value;
+    }
+
+    get playerFormArray(): FormArray | null {
+        return <FormArray>this.teamForm.controls['players'];
+    }
+
+    get playerSalary(): number[] | null {
+        return this.playerFormArray.controls.map(x => Number(x.get('salary').value));
+    }
+
+    get totalPlayerSalary(): number {
+        return this.playerSalary.reduce( (a, b) => a + b ); 
+    }
+
+    get players(){
+        return this.playerFormArray.value;
+    }
+
+    set teamName(v: string | null) {
+        this.teamForm.controls['teamName'].setValue(v);
+    }
+
+    set managerName(v: string | null) {
+        this.teamForm.controls['managerName'].setValue(v);
+    }
+
+    set players(p: Player[] | null) {
+        this.teamForm.controls['players'] = null;
+
+        if (p?.length > 0) {
+            p.forEach(x => {
+                (<FormArray>this.teamForm.controls['players']).controls.push(
+                    new FormGroup({
+                        playerName: new FormControl(x.playerName, Validators.required),
+                        salary: new FormControl(x.salary, Validators.required)
+                    })
+                );
+            });
+        }
+    }
+
+}
+```
+
+___
+
+## 3 Component
+
+```typescript
+import { Component } from '@angular/core';
+import { FormFactoryService } from '../services/form-factory.service';
+
+@Component({
+  selector: 'app-calculated-fields',
+  templateUrl: './calculated-fields.component.html',
+  styleUrls: ['./calculated-fields.component.scss']
+})
+export class CalculatedFieldsComponent {
+
+  intakeForm = this.formFactory.teamForm;
+  team = this.formFactory.team;
+
+  constructor(
+    private formFactory: FormFactoryService
+  ) {}
+
+  onSubmit() {
+    console.log('%c 👍 Form data are sent to the back end.', 'color: green');
+  }
+
+}
+```
+
+___
+
+
+## 4 Template
+
+```html
+
+<form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
+    <app-input label="Team Name" [control]="$any(intakeForm.controls['teamName'])" matTooltip="We are a group of lynx."></app-input> &nbsp; 
+    <app-input label="Manager Name" [control]="$any(intakeForm.controls['managerName'])"></app-input> <br>
+
+    <div>Players</div>
+    <div formArrayName="players">
+        <div *ngFor="let p of $any(intakeForm.controls['players']).controls; let i = index"
+            [formGroupName]="i"
+        >
+            <app-input fmt="currency" label="Player Name" [control]="$any(p.controls['playerName'])"></app-input> &nbsp;
+            <app-input fmt="currency" label="Salary" [control]="$any(p.controls['salary'])"></app-input> <br>
+        </div>
+    </div>
+
+    <div>Total player salary: {{ team.totalPlayerSalary|  currency: 'USD': 'symbol': '1.0-0' }}</div>
+    <br>
+
+    <button mat-mini-fab type="submit"><mat-icon>done</mat-icon></button>
+</form>
+
+```

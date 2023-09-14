@@ -13,11 +13,11 @@ export class FormFactoryService {
     players: this.fb.array([
       this.fb.group({
         playerName: ['Sue', Validators.required],
-        salary: [1.2E5, Validators.required]
+        salary: ['$150,000', Validators.required]
       }),
       this.fb.group({
         playerName: ['Ann', Validators.required],
-        salary: [1E5, Validators.required]
+        salary: ['$200,000', Validators.required]
       })
     ])
   });
