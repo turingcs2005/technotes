@@ -8,14 +8,16 @@ import { SecurityContext } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { SqlComponent } from './sql/sql.component';
 import { MongodbComponent } from './mongodb/mongodb.component';
-import { SequelizeTransactionsComponent } from './sequelize-transactions/sequelize-transactions.component';
+import { TransactionsComponent } from './sequelize/transactions/transactions.component';
+import { MigrationsComponent } from './sequelize/migrations/migrations.component';
 
 @NgModule({
   declarations: [
     DatabaseComponent,
     SqlComponent,
     MongodbComponent,
-    SequelizeTransactionsComponent
+    TransactionsComponent,
+    MigrationsComponent,
   ],
   imports: [
     CommonModule,

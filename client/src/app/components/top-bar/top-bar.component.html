@@ -88,7 +88,12 @@
 <mat-menu #databaseMenu="matMenu">
   <button mat-menu-item [routerLink]="['/database/sql']">SQL</button>
   <button mat-menu-item [routerLink]="['/database/mongodb']">MongoDB</button>
-  <button mat-menu-item [routerLink]="['/database/sequelize-transactions']">Sequelize Transactions</button>
+  <button mat-menu-item [matMenuTriggerFor]="sequelizeMenu">Sequelize</button>
+</mat-menu>
+
+<mat-menu #sequelizeMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/database/sequelize/transactions']">Transactions</button>
+  <button mat-menu-item [routerLink]="['/database/sequelize/migrations']">Migrations</button>
 </mat-menu>
 
 <mat-menu #toolingMenu="matMenu">
