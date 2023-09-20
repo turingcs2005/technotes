@@ -249,3 +249,11 @@ kbd i {
 .long-input {
   width: 600px !important;
 }
+
+.float-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+}

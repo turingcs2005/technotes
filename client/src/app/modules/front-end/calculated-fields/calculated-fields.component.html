@@ -1,28 +1,56 @@
 
 <div class="mat-h1">Calculated Fields using Reactive Forms</div>
 
-<form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
-    <app-input label="Team Name" [control]="$any(intakeForm.controls['teamName'])" matTooltip="We are a group of lynx."></app-input> &nbsp; 
-    <app-input label="Manager Name" [control]="$any(intakeForm.controls['managerName'])"></app-input> <br>
+<mat-divider></mat-divider><br>
 
-    <div>Players</div>
-    <div formArrayName="players">
-        <div *ngFor="let p of $any(intakeForm.controls['players']).controls; let i = index"
-            [formGroupName]="i"
-        >
-            <app-input label="Player Name" [control]="$any(p.controls['playerName'])"></app-input> &nbsp;
-            <app-input fmt="currency" label="Salary" [control]="$any(p.controls['salary'])"></app-input> <br>
-        </div>
-    </div>
-
-    <div>Total player salary: {{ team.totalPlayerSalary|  currency: 'USD': 'symbol': '1.0-0' }}</div>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>1 Introduction</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s1_introduction.md"></markdown>
     <br>
+    <form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
+        <app-input label="Team Name" [control]="$any(intakeForm.controls['teamName'])" matTooltip="We are a group of lynx."></app-input> &nbsp; 
+        <app-input label="Manager Name" [control]="$any(intakeForm.controls['managerName'])"></app-input> <br>
 
-    <button mat-mini-fab type="submit"><mat-icon>done</mat-icon></button>
-</form>
+        <div>Players</div>
+        <div formArrayName="players">
+            <div *ngFor="let p of $any(intakeForm.controls['players']).controls; let i = index"
+                [formGroupName]="i"
+            >
+                <app-input label="Player Name" [control]="$any(p.controls['playerName'])"></app-input> &nbsp;
+                <app-input fmt="currency" label="Salary" [control]="$any(p.controls['salary'])"></app-input> <br>
+            </div>
+        </div>
 
-<br>
+        <div>Total player salary: {{ team.totalPlayerSalary|  currency: 'USD': 'symbol': '1.0-0' }} &nbsp; &nbsp;
+                <button mat-mini-fab type="submit"><mat-icon>done</mat-icon></button>
+        </div>
+        <br>
+    </form>
+</mat-expansion-panel>
 
-<markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/introduction.md"></markdown>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>2 Interfaces and Classes</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s2_interfaces_classes.md"></markdown>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>3 Components</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s3_components.md"></markdown>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>4 Templates</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s4_templates.md"></markdown>
+</mat-expansion-panel>
+
+
 
 
