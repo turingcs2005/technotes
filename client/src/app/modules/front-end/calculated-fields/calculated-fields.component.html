@@ -1,14 +1,33 @@
 
 <div class="mat-h1">Calculated Fields using Reactive Forms</div>
 
-<mat-divider></mat-divider><br>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>1 Architecture</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s1_architecture.md"></markdown>
+</mat-expansion-panel>
 
 <mat-expansion-panel>
     <mat-expansion-panel-header>
-        <mat-panel-title>1 Introduction</mat-panel-title>
+        <mat-panel-title>2 A Sample Reactive Form</mat-panel-title>
     </mat-expansion-panel-header>
-    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s1_introduction.md"></markdown>
-    <br>
+
+    <p>Below is a sample reactive form. A team has three properties:</p>
+    <ul>
+        <li>Team name</li>
+        <li>Manager name</li>
+        <li>An array of players</li>
+    </ul>
+
+    <p>A player has two properties:</p>
+    <ul>
+        <li>Player name</li>
+        <li>Salary</li>
+    </ul>
+
+    <p>A calculated value, total player salary, is also displayed.</p> <br>
+
     <form [formGroup]="intakeForm" (ngSubmit)="onSubmit()">
         <app-input label="Team Name" [control]="$any(intakeForm.controls['teamName'])" matTooltip="We are a group of lynx."></app-input> &nbsp; 
         <app-input label="Manager Name" [control]="$any(intakeForm.controls['managerName'])"></app-input> <br>
@@ -32,23 +51,39 @@
 
 <mat-expansion-panel>
     <mat-expansion-panel-header>
-        <mat-panel-title>2 Interfaces and Classes</mat-panel-title>
+        <mat-panel-title>3 Form Factory</mat-panel-title>
     </mat-expansion-panel-header>
-    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s2_interfaces_classes.md"></markdown>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s2_form_factory.md"></markdown>
 </mat-expansion-panel>
 
 <mat-expansion-panel>
     <mat-expansion-panel-header>
-        <mat-panel-title>3 Components</mat-panel-title>
+        <mat-panel-title>4 Component</mat-panel-title>
     </mat-expansion-panel-header>
-    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s3_components.md"></markdown>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s3_component.md"></markdown>
+</mat-expansion-panel>
+
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>5 Template</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s4_template.md"></markdown>
+</mat-expansion-panel>
+
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>6 Interfaces and Classes</mat-panel-title>
+    </mat-expansion-panel-header>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s5_interfaces_classes.md"></markdown>
 </mat-expansion-panel>
 
 <mat-expansion-panel>
     <mat-expansion-panel-header>
-        <mat-panel-title>4 Templates</mat-panel-title>
+        <mat-panel-title>7 Helper Functions for String &harr; Number Transformation</mat-panel-title>
     </mat-expansion-panel-header>
-    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s4_templates.md"></markdown>
+    <markdown mermaid src="../../../../assets/markdown/front-end/calculated-fields/s5_interfaces_classes.md"></markdown>
 </mat-expansion-panel>
 
 

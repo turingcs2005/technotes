@@ -1,9 +1,6 @@
-Data structure should always come first when building an app.
-
-Our strategy is to wrap a Reactive Form in a TypeScript class, where we use getters, setters and functions to manipulate form data and implement business logics, 
-
 ```typescript
 import { FormControl, FormGroup, FormArray, Validators } from "@angular/forms";
+import { numberToCurrency, currencyToNumber } from "src/app/app-data/app-tools";
 
 export interface IPlayer {
     playerName: string | null,
@@ -22,7 +19,7 @@ export class Player implements IPlayer {
     }
 
     get salary(): number | null {
-        return this.playerForm.controls['salary'].value;
+        return currencyToNumber(this.playerForm.controls['salary'].value);
     }
 
     set playerName(v: string | null) {
@@ -30,7 +27,7 @@ export class Player implements IPlayer {
     }
 
     set salary(v: number | null) {
-        this.playerForm.controls['salary'].setValue(v);
+        this.playerForm.controls['salary'].setValue(numberToCurrency(v));
     }
 
 }
@@ -58,16 +55,13 @@ export class Team implements ITeam {
         return <FormArray>this.teamForm.controls['players'];
     }
 
-    get playerSalary(): number[] | null {
-        return this.playerFormArray.controls.map(x => Number(x.get('salary').value));
+    get players(){
+        return this.playerFormArray.controls.map( (i:any) => new Player(i));
     }
 
     get totalPlayerSalary(): number {
-        return this.playerSalary.reduce( (a, b) => a + b ); 
-    }
-
-    get players(){
-        return this.playerFormArray.value;
+        console.log('This dude gets executed with every single change detection cycle!');
+        return this.players.map(x => x.salary).reduce( (a, b) => a + b ); 
     }
 
     set teamName(v: string | null) {
@@ -86,7 +80,7 @@ export class Team implements ITeam {
                 (<FormArray>this.teamForm.controls['players']).controls.push(
                     new FormGroup({
                         playerName: new FormControl(x.playerName, Validators.required),
-                        salary: new FormControl(x.salary, Validators.required)
+                        salary: new FormControl(numberToCurrency(x.salary), Validators.required)
                     })
                 );
             });
