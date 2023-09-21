@@ -5,14 +5,18 @@
 - [ngx-markdown guide](https://jfcere.github.io/ngx-markdown/get-started)
 - [mermaid guide](https://mermaid-js.github.io/mermaid/#/)
 
-## Install ngx-markdown, prismjs, mermaid and katex
-1. Install 4 npm packages <pre class="command-line"><code>npm i PACKAGE_NAME</code></pre>
+## Install packages and configure your project
+1. Install 5 npm packages
+<pre class="command-line"><code>npm i PACKAGE_NAME</code></pre>
 	- ngx-markdown (for rendering static markdown files)
+	- marked (markdown)
 	- prismjs (for programming language syntax highlighting)
 	- mermaid (for charting)
 	- katex (for math formulas)
+  Install type declaration for marked
+<pre class="command-line"><code>npm i -D @types/marked</code></pre>
 	
-2. Edit angular.json file
+1. Edit angular.json file
 	- Append code below to build/scripts:
 	```javascript
 	/* append code below to "script" sections */
@@ -32,28 +36,34 @@
 	"node_modules/prismjs/plugins/command-line/prism-command-line.css"
 	```
 
-3. Create your markdown files under directory <code>/src/assets/markdown/</code> (or whatever directory you prefer under <code>/src/assets/</code>)
+2. Create your markdown files under directory <code>/src/assets/markdown/</code> (or whatever directory you prefer under <code>/src/assets/</code>)
 
-4. In your module file, import <code>HttpClientModule</code>, <code>MarkdownModule</code> and <code>SecurityContext</code>, and then configure MarkdownModule in the imports array:
+3. In your app.module.ts file, import <code>MarkdownModule</code>, and then configure MarkdownModule in the imports array:
 	```typescript
-	/* import MarkdownMoudle and SecuirtyContext */
+	import { NgModule } from '@angular/core';
 	import { MarkdownModule } from 'ngx-markdown';
-	import { SecurityContext } from '@angular/core';
-	/* This example does not import HttpClientModule because it is widely used for making API calls and 
-	is often imported via SharedModule. */
-	...
-	/* configure MarkdownModule in imports array */
+
+	import { AppComponent } from './app.component';
+
 	@NgModule({
 		imports: [
-			MarkdownModule.forRoot({
-				sanitize: SecurityContext.NONE
-			}),
-			MarkdownModule.forChild()
-		]
+	   	MarkdownModule.forRoot(),
+		],
+		declarations: [AppComponent],
+		bootstrap: [AppComponent],
 	})
+	export class AppModule { }
 	```
 
-5. Create a component, add routing and render .md files in your template:
+In your lazy-loaded module file, import <code>MarkdownModule</code>, and then configure MarkdownModule in the imports array:
+```typescript
+	import { MarkdownModule } from 'ngx-markdown';
+	imports: [
+		MarkdownModule.forChild(),
+	]
+```
+
+4. Create a component, add routing and render .md files in your template:
 	```html
 	<markdown
 		mermaid
@@ -61,12 +71,12 @@
 	</markdown>
 	```
 
-6. To render mermaid chart in your markdown file, use<br>
+5. To render mermaid chart in your markdown file, use<br>
 \`\`\`mermaid<br>
 YOUR CHART<br>
 \`\`\`
 
-7. To render source code, there are two options:<br>
+1. To render source code, there are two options:<br>
    1. Render source code in a markdown file. You have to copy your source code to a markdown file and specify the type of the code (e.g. javascript, typescript, latex, etc.).<br>
 	\`\`\`LANGUAGE<br>
 	YOUR SOURCE CODE<br>
@@ -84,9 +94,9 @@ YOUR CHART<br>
 	></markdown>
 	```
 
-8. To render command-line commands (if you have imported command-line plugin for prism), use<br>
+2. To render command-line commands (if you have imported command-line plugin for prism), use<br>
 	```html
 	<pre class="command-line"><code>YOUR COMMANDS</code></pre>
 	```
 
-9.  To render math formulas, please refer to [Katex documentation](https://katex.org/docs/api.html)
+3.  To render math formulas, please refer to [Katex documentation](https://katex.org/docs/api.html)
