@@ -36,7 +36,7 @@ style Extensions text-align: left
    1. Create your SSH configuration file.
       1. Click a double-arrow icon on the lower-left corner of VSC (it displays 'Open a Remote Window' on mouseover) &rarr; Connect to Host... &rarr; Configure SSH Hosts... &rarr; Choose C:\\Users\\<mark>rxw509</mark>\\.ssh\\config 
       2. paste the following text into the cofiguration file: 
-      >Host AI_Academy<br>&nbsp;&nbsp;&nbsp;&nbsp;HostName 10.93.3.54<br>&nbsp;&nbsp;&nbsp;&nbsp;User <mark>rxw509</mark><br>&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile C:\Users\<mark>rxw509</mark>\.ssh\id_rsa
+      Host AI_Academy<br>&nbsp;&nbsp;&nbsp;&nbsp;HostName 10.93.3.54<br>&nbsp;&nbsp;&nbsp;&nbsp;User <mark>rxw509</mark><br>&nbsp;&nbsp;&nbsp;&nbsp;IdentityFile C:\\Users\\<mark>rxw509</mark>\\.ssh\\id_rsa
       3. Press Ctrl + s ⌨️ to save the configuration file.
    2. Connect to Azure Linux Virtual Machine.
       1. Click on the same double-arrow icon again &rarr; Connect to Host... &rarr; AI_Academy
