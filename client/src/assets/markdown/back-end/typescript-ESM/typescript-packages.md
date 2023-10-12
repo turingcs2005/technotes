@@ -17,15 +17,28 @@ dotenv.config();
 console.log(`App name is ${process.env.APP_NAME}`);
 ```
 
-## 2. cors and cookie-parser
+## 2. cors, cookie-parser and body-parser
 1. Install packages
-<pre class="command-line"><code>npm i cors cookie-parser
-npm i -D @types/cors @types/cookie-parser</code></pre>
+<pre class="command-line"><code>npm i cors cookie-parser body-parser
+npm i -D @types/cors @types/cookie-parser @types/body-parser</code></pre>
 
 2. Import and consume cors and cookie-parser in <mark>app.mts</mark>:
 ```typescript
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+
+/* Assuming your .env file is directly under /server, and there are directories /server/src and /server/dist for
+TypeScript source code and transpiled JavaScript code, respectively */
+dotenv.config({path: path.resolve(__dirname, '../.env')}); 
+
 app.use(cors());  		// allow cross-origin resource sharing
 app.use(cookieParser());
+app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(bodyParser.json());
 ```
 
 ## 3. path and url
