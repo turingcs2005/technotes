@@ -24,3 +24,14 @@ Your job as a developer is to save policy data to a database for consumption by 
 - A Power BI dashboard will require a policy number.
 - A policy number can be passed to a Power BI URL.
 - A Power BI dashboard can be embedded in an Angular app using SafePipe. Feel free to reach out to Rui, Sol or Ryan regarding embedding a Power BI dashbaord.
+
+## 5 Endorsement changes
+
+- Premium changes can be easily traced. They are usually at the policy or coverage level.
+- Endorsement changes are difficult to identify.
+  - An endorsement can add/remove a car (exposure change), add/remove a coverage such as collision (coverage change), etc. 
+  - A single endorsement effective date may involve multiple endorsement changes (e.g. effective 6/1/2023, a new car is added, but collision coverage is removed from all cars, etc.).
+  - To trace these changes, you need to traverse the whole tree-structure of a policy.
+  - In light of the computational cost, it is advisable to add an endorsement note field to each endorsement, so changes can be traced easily. (e.g. "A 3rd car is added to policy; collision coverage is removed from all cars".)
+  - Such endorsement notes can be consumed by a Power BI dashboard.
+  
