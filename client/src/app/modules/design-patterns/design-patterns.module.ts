@@ -5,16 +5,20 @@ import { SecurityContext } from '@angular/core';
 import { DesignPatternsRoutingModule } from './design-patterns-routing.module';
 import { DesignPatternsComponent } from './design-patterns.component';
 import { ActuarialRatingComponent } from './actuarial-rating/actuarial-rating.component';
+import { EndorsementComponent } from './endorsement/endorsement.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     DesignPatternsComponent,
-    ActuarialRatingComponent
+    ActuarialRatingComponent,
+    EndorsementComponent
   ],
   imports: [
     CommonModule,
     DesignPatternsRoutingModule,
+    SharedModule,
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE
     }),
