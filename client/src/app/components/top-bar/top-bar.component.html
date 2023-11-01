@@ -83,7 +83,16 @@
 
 <mat-menu #codingMenu="matMenu">
   <button mat-menu-item [routerLink]="['/coding/decorators']">Decorators</button>
-  <button mat-menu-item [routerLink]="['/coding/observable']">Observable</button>
+  <button mat-menu-item [matMenuTriggerFor]="rxjsMenu">rxjs library</button>
+</mat-menu>
+
+<mat-menu #rxjsMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/coding/rxjs/p1_async']">1. Async calls</button>
+  <button mat-menu-item [routerLink]="['/coding/rxjs/p2_observables']">2. Observables</button>
+  <button mat-menu-item [routerLink]="['/coding/rxjs/p3_observers']">3. Observers</button>
+  <button mat-menu-item [routerLink]="['/coding/rxjs/p4_subscription']">4. Subscription</button>
+  <button mat-menu-item [routerLink]="['/coding/rxjs/p5_operators']">5. Operators</button>
+  <button mat-menu-item [routerLink]="['/coding/rxjs/p6_subjects']">6. Subjects</button>
 </mat-menu>
 
 <mat-menu #databaseMenu="matMenu">
