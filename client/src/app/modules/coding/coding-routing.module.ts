@@ -8,6 +8,9 @@ import { P3ObserversComponent } from './rxjs/p3-observers/p3-observers.component
 import { P4SubscriptionComponent } from './rxjs/p4-subscription/p4-subscription.component';
 import { P5OperatorsComponent } from './rxjs/p5-operators/p5-operators.component';
 import { P6SubjectsComponent } from './rxjs/p6-subjects/p6-subjects.component';
+import { P1IntroductionComponent } from './socket_io/p1-introduction/p1-introduction.component';
+import { P2ChatAppComponent } from './socket_io/p2-chat-app/p2-chat-app.component';
+import { P3DatabasePromulgationComponent } from './socket_io/p3-database-promulgation/p3-database-promulgation.component';
 
 const routes: Routes = [
   { path: '', component: CodingComponent },
@@ -18,6 +21,9 @@ const routes: Routes = [
   { path: 'rxjs/p4_subscription', component: P4SubscriptionComponent },
   { path: 'rxjs/p5_operators', component: P5OperatorsComponent },
   { path: 'rxjs/p6_subjects', component: P6SubjectsComponent },
+  { path: 'socket-io/p1-introduction', component: P1IntroductionComponent },
+  { path: 'socket-io/p2-chat_app', component: P2ChatAppComponent },
+  { path: 'socket-io/p3-database_promulgation', component: P3DatabasePromulgationComponent },
 ];
 
 @NgModule({

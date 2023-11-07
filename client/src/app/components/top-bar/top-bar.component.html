@@ -84,6 +84,7 @@
 <mat-menu #codingMenu="matMenu">
   <button mat-menu-item [routerLink]="['/coding/decorators']">Decorators</button>
   <button mat-menu-item [matMenuTriggerFor]="rxjsMenu">rxjs library</button>
+  <button mat-menu-item [matMenuTriggerFor]="socketioMenu">socket.io</button>
 </mat-menu>
 
 <mat-menu #rxjsMenu="matMenu">
@@ -93,6 +94,12 @@
   <button mat-menu-item [routerLink]="['/coding/rxjs/p4_subscription']">4. Subscription</button>
   <button mat-menu-item [routerLink]="['/coding/rxjs/p5_operators']">5. Operators</button>
   <button mat-menu-item [routerLink]="['/coding/rxjs/p6_subjects']">6. Subjects</button>
+</mat-menu>
+
+<mat-menu #socketioMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/coding/socket-io/p1-introduction']">1. Introduction</button>
+  <button mat-menu-item [routerLink]="['/coding/socket-io/p2-chat_app']">2. Chat app</button>
+  <button mat-menu-item [routerLink]="['/coding/socket-io/p3-database_promulgation']">3. Database change promulgation</button>
 </mat-menu>
 
 <mat-menu #databaseMenu="matMenu">
