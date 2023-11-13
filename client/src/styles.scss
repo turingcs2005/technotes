@@ -84,13 +84,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .link {
   @extend .pointer;
-  color: $accent;
+  color: blue;
   text-decoration: none;
 }
 
 .tool-tip {
   @extend .help;
-  color: $accent;
+  color: blue;
 }
 
 .left-padded {
@@ -102,11 +102,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .emphasize {
-  color: $primary500;
+  color: navy; 
 }
 
 .warn {
-  color: $warn;
+  color: darkred;
 }
 
 .padded-with-smooth-corner {
@@ -118,12 +118,12 @@ code {
   @extend .padded-with-smooth-corner;
   background-color: #fdf6e3;
   font-family: monospace;
-  color: $primary;
+  color: navy;
 }
 
 mark {
   @extend .padded-with-smooth-corner;
-  color: $primary300;
+  color: navy;
 }
 
 .right-align {
