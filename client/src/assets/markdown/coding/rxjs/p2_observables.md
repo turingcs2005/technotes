@@ -13,6 +13,8 @@ An Observable is an instance of the Observable class:
 - An Observable is "read-only": values emitted can not be altered. Values received by subscribers are the same.
 - Subscribing to an Observable is like invoking a function call. Each subscription triggers one call, which in turn emits a value stream.
 
+When consuming observables in an Angular app, <mark>please use tools such as [async pipe](https://angular.io/api/common/AsyncPipe)</mark> to simplify your code. (For example, an async piple can subscribe, unsubscribe and detect changes using a single line of code.)
+
 We will use an example to illustrate the ideal. A fast-food restaurant offers only one meal package:
 
 1. a beer 🍺
