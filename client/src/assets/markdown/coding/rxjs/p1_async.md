@@ -50,13 +50,24 @@ Async calls add another dimension to your code: time. By the time an async all r
 
 It should be noted that <mark>familiar control flow structures (e.g. for loop, while loop) are not async aware</mark>&mdash;they're oblivious of wait time or latency between iterations.
 
-### 2. Advantages of Observables + rxjs over vanilla callbacks and Promises
+### 2. Callback functions and Promises
 
-Though callback functions and Promises are still used for simple async operations, in Angular we will use almost exclusively Observables because of the advantages they offer, which include:
+Callback functions and Promises are earlier attempts to deal with async operations.
 
-- Clean syntax (no callback hell)
-- Can handle multiple values
-- Can cancel a subscription
-- Can retry from failure
+- Callback functions
+    - Ensures that the inner function (callback) returns before the outer function resumes execution.
+    - Callback hell: too many levels of nested callback functions make the source code indigestible. 
+
+- Promises
+    - Ensures execution order by chaining .then()
+    - Much cleaner syntax with .then() syntax (no callback hell)
+    - Cannot handle multiple values, canel a subscription when it's no longer needed, or retry from failure
+
+### 3. Observables + rxjs library
+
+In Angular we will use almost exclusively Observables to handle async operations.
+
+- Clean syntax using various rxjs operators for working with Observables, including higher-order observables.
+- Can handle multiple values, cancel a subscription, or retry from failure
 
 The rxjs library combines functional and reactive programming paradigms. It offers many useful operators for working with observables, which help a developer to abstract away the notion of latency from his/her code while allowing the modeling of solutions using a linear sequence of steps through which data can flow over time.
