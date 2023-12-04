@@ -12,7 +12,7 @@ A Subject is a strange animal:
 
 >*A subscriber will only get published values that were emitted after the subscription.*
 
-A Subject is like live broadcasting. Think of the World Cup final between France and Argentina. The broadcast maintains a registry of subscribers. Every subscreiber watches the same game. If a subscriber joins only at the beginning of the 2nd half and the score is already 1:1, the he doesn't get to see what he has already missed (first half scoring). By invoking the next() function, a Subject can emit new values.
+A Subject is like live broadcasting. Think of the World Cup final between France and Argentina. The broadcast maintains a registry of subscribers. Every subscriber watches the same game. If a subscriber joins only at the beginning of the 2nd half and the score is already 1:1, the he doesn't get to see what he has already missed (first half scoring). By invoking the next() function, a Subject can emit new values.
 
 ## 2. BehaviorSubject
 
