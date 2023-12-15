@@ -1,9 +1,11 @@
 # Deploy an App in Azure Cloud
+
 A CI/CD pipeline is the preferred deployment approach, as it allows deployment from source code. The approach described below requires building a docker image. When activated, a docker image turns into a docker container which serves a web app.
 
 ---
 ### Overview of Docker Deployment
-A Node.js app runs in an isolated docker environment with all its dependencies (except operating system kernel) installed inside a container environment. All docker containers run off a shared Linux kernel from the hosting environment. 
+
+A Node.js app runs in an isolated docker environment with all its dependencies (except operating system kernel) installed inside a container environment. All docker containers run off a shared Linux kernel from the host environment. 
 
 ```mermaid
 flowchart LR
@@ -22,9 +24,10 @@ We recommend Alpine Linux with preinstalled Node.js as our base image. For examp
 <pre><code>FROM node:18-alpine</code></pre> in your docker file. Alpine Linux is parsimonious, resulting in greatly reduced image size (~ 150MB vs. 1GB+ using Ubuntu image).
 
 A web app has 3 parts:
-- Front end (Angular app): Source code are compiled into a folder served by the back end (e.g. /server/dist/). These compiled code run in a browser (e.g. Google Chrome) on the client side.
-- Back end (Node.js app): Source code run on a server. It serves APIs (e.g. database CRUD operations) and the compiled front end.
-- Database: For data persistency, a SQL database (e.g. Microsoft SQL) and/or a no-SQL database (e.g. MongoDB) are used to store data.
+
+- Front end (Angular app): source code are compiled into a folder served by the back end (e.g. /server/angular/). These compiled code run in a browser (e.g. Google Chrome) on the client side (e.g. a laptop).
+- Back end (Node.js app): source code run on a server (e.g. Azure docker). It serves APIs (e.g. database CRUD operations) and the compiled front end.
+- Database: for data persistency. A SQL database (e.g. Microsoft SQL) and/or a no-SQL database (e.g. MongoDB) are used to store data.
 
 ```mermaid
 flowchart LR
@@ -124,25 +127,37 @@ ___
 - You need to replace XX with the correct node.js version, e.g. 16
 - If you may debug the app in production using Angular Dev Tools in your Chrome browser, replace --production with --development (I suppose your development configuration has sourceMap = true).
 
-	<pre><code># build front end
-	FROM node:XX AS client_build
+	<pre><code>
+	# build front end
+	FROM node:20-alpine AS client_build
+
 	WORKDIR /app
+
 	COPY ./client /app/
-	RUN npm install --force
-	RUN node_modules/.bin/ng build -c=development
+
+	RUN npm install
+	RUN node_modules/.bin/ng build -c=production
 
 	# build back end
-	FROM node:XX AS server_build
+	FROM node:20-alpine AS server_build
+
 	WORKDIR /app
+
 	COPY ./server /app/
-	COPY --from=client_build /app/dist/client /app/dist
+	COPY --from=client_build /app/dist/client /app/angular
+
 	RUN npm install --production
 
 	# build docker
-	FROM node:XX-alpine
+	FROM node:20-alpine
+
 	WORKDIR /app
+
+	RUN node -v
+
 	COPY --from=server_build /app ./
-	CMD ["node", "./bin/www"]
+
+	CMD ["node", "./dist/app.mjs"]
 	</code></pre>
 	<mark>Remember to create your own .env file since .env is ignored by git to protect password.</mark>
 2. Check project configuration
