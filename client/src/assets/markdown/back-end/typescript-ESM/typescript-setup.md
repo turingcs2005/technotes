@@ -32,8 +32,8 @@ When TypeScript finds a file (.ts, .js), it will look into the closest <mark>pac
 	<pre class="command-line"><code>npm init -y</code></pre>
 	3. Install types for node as a development dependency
 	<pre class="command-line"><code>npm i -D @types/node</code></pre>
-	4. Install TypeScript as a development dependency
-	<pre class="command-line"><code>npm i -D typescript</code></pre>
+	4. Install TypeScript as a <mark>production</mark> dependency&mdash;you will need to build your back end in docker.
+	<pre class="command-line"><code>npm i typescript</code></pre>
 	5. Install nodemon so your app is refreshed whenever changes occur to your source code
 	<pre class="command-line"><code>npm i -D nodemon</code></pre>
 	Obviously, you can use your globally installed TypeScript compiler/nodemon. Installing TypeScript/nodemon locally ensures that compatible verions these packages will be used after the project is cloned.

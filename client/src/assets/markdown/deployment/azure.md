@@ -147,6 +147,7 @@ ___
 	COPY --from=client_build /app/dist/client /app/angular
 
 	RUN npm install --production
+	RUN npm run build
 
 	# build docker
 	FROM node:20-alpine
