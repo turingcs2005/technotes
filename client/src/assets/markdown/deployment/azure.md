@@ -147,6 +147,8 @@ ___
 	COPY --from=client_build /app/dist/client /app/angular
 
 	RUN npm install --production
+
+	# build is defined in package.json. You may use 'RUN npx tsc' directly
 	RUN npm run build
 
 	# build docker
