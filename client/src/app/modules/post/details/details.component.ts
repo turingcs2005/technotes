@@ -60,24 +60,24 @@ export class DetailsComponent implements OnInit {
 
   onEdit() {
     // navigate to edit component, passing in ID 
-    // this.router.navigate([`/post/edit/${this.post._id}`]);
+    this.router.navigate([`/post/edit/${this.post._id}`]);
   }
 
   onDelete() {
     // After deletion, navigate to post homepage 
-    // if (confirm('Are you sure you want to delete this post? This action cannot be undone.')){
-    //   this.apiService.deletePost(this.post._id).subscribe(data => {
-    //     let msg = this.post.title + 'has been deleted.';
-    //     console.log(msg);
+    if (confirm('Are you sure you want to delete this post? This action cannot be undone.')){
+      this.apiService.deletePost(this.post._id).subscribe(data => {
+        let msg = this.post.title + 'has been deleted.';
+        console.log(msg);
 
-    //     this.globalService.snackBarText = msg;
-    //     this.snackBar.openFromComponent(SnackBarComponent, {
-    //       duration: 5000
-    //     });
+        this.globalService.snackBarText = msg;
+        this.snackBar.openFromComponent(SnackBarComponent, {
+          duration: 5000
+        });
 
-    //     this.router.navigate(['/post/list']);
-    //   })
-    // }
+        this.router.navigate(['/post/list']);
+      })
+    }
   }
 
 }
