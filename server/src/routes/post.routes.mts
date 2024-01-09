@@ -44,7 +44,7 @@ router.put('/:id', async (req, res) => {
 
 // delete an existing post
 router.delete('/:id', async (req, res) => {
-	const data = await Post.findByIdAndRemove(req.params.id, req.body).catch( err => console.log('Error occured while deleting a post by ID: ', err) );
+	const data = await Post.findByIdAndDelete({_id: req.params.id}).catch( err => console.log('Error occured while deleting a post by ID: ', err) );
 	res.status(200).json(data);
 });
 
