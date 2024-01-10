@@ -31,7 +31,7 @@ AppModule --> |preloaded| SharedModule(Shared Module):::preload
 
 ## 2. CLI commands for creating module-specific components and feature modules
 
-Starting with Angular 17, a component is standalone by default&mdash;a standalone component does not belong to any module and can be consumed by whoever imports it. Often we need to create module-specific components that is not shared. This will require option *--standalone=false* in your Angular CLI command.
+Starting with Angular 17, a component is standalone by default&mdash;a standalone component does not belong to any module and can be consumed by whoever imports it. Often we need to create module-specific components that are not shared. This will require option *--standalone=false* in your Angular CLI command.
 
 - To create a preloaded component under the app module
 <pre class="command-line"><code>ng g c components/COMPONENT_NAME --standalone=false --module=app</code></pre>
