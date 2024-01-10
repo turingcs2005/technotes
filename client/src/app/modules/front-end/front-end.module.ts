@@ -26,6 +26,7 @@ import { TimeStampComponent } from './time-stamp/time-stamp.component';
 import { CalculatedFieldsComponent } from './calculated-fields/calculated-fields.component';
 import { SalaryPipe } from './pipes/salary.pipe';
 import { TestPipe } from './pipes/test.pipe';
+import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TestPipe } from './pipes/test.pipe';
     TimeStampComponent,
     CalculatedFieldsComponent,
     SalaryPipe,
-    TestPipe
+    TestPipe,
+    LazyLoadingComponent
   ],
   imports: [
     CommonModule,

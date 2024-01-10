@@ -1,4 +1,9 @@
 # Asynchronous calls
+___
+
+### About rxjs library
+> JavaScript rxjs is a difficult library. Its operators allow orchestration of different data streams, so various data elements  will arrive in the correct order. Without such orchestration, your app will have all kinds of bugs, e.g. an API call is made prematurely with an empty payload because another API has not yet returned the payload. This tutorial begins with an introduction to async calls and cover the core concepts of the rxjs library including observables, observers, subscription, subjects, and various operators.
+___
 
 ### 1. Async calls
 
