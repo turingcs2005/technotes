@@ -42,4 +42,4 @@ As mentioned above, under the app module, there should be only 3 preloaded compo
 
 - To create a lazy-loaded feature module, use
 <pre class="command-line"><code>ng g m modules/MODULE_NAME --route=ROUTE --module=app</code></pre>
-By convention, all feature modules are placed under /src/app/modules/ as child modules of the app module. If your app is complex enough, you may need to create more levels, i.e. a feature module is created as a child of another feature module. Often a single level will suffice without the need of deeper hierarchies.
+By convention, all feature modules are placed under /src/app/modules/ as child modules of the app module. If your app is complex enough, you may need to create more levels, i.e. a feature module is created as a child of another feature module. Often a single level will suffice without the need for deeper hierarchies.
