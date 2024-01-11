@@ -18,6 +18,7 @@ import { ColorThemeComponent } from './color-theme/color-theme.component';
 import { TimeStampComponent } from './time-stamp/time-stamp.component';
 import { CalculatedFieldsComponent } from './calculated-fields/calculated-fields.component';
 import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
+import { UIFreezeSpinnerComponent } from './ui-freeze-spinner/ui-freeze-spinner.component';
 
 const routes: Routes = [
   { path: '', component: FrontEndComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'time-stamp', component: TimeStampComponent },
   { path: 'calculated-fields', component: CalculatedFieldsComponent },
   { path: 'lazy-loading', component: LazyLoadingComponent },
+  { path: 'ui-freeze-spinner', component: UIFreezeSpinnerComponent },
 ];
 
 @NgModule({

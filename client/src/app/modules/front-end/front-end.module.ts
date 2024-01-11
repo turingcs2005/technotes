@@ -27,6 +27,7 @@ import { CalculatedFieldsComponent } from './calculated-fields/calculated-fields
 import { SalaryPipe } from './pipes/salary.pipe';
 import { TestPipe } from './pipes/test.pipe';
 import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
+import { UIFreezeSpinnerComponent } from './ui-freeze-spinner/ui-freeze-spinner.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { LazyLoadingComponent } from './lazy-loading/lazy-loading.component';
     CalculatedFieldsComponent,
     SalaryPipe,
     TestPipe,
-    LazyLoadingComponent
+    LazyLoadingComponent,
+    UIFreezeSpinnerComponent
   ],
   imports: [
     CommonModule,
