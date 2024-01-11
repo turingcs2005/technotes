@@ -29,4 +29,4 @@ setTimeout( () => {
 }, 1);
 ```
 
-The 1 millisecond delay is enough for Angular to display a spinner before UI freezes. The hideSpinner() is executed after 1 millisecond, by by then the UI is already frozen, so the spinner will not disappear. The spinner will disappear only after the array of buildings are rendered in UI, i.e. when the UI freeze ends.
+The 1 millisecond delay is enough for Angular to display a spinner before UI freezes. The hideSpinner() is executed after 1 millisecond, but by then the UI is already frozen, so the spinner will not disappear. The spinner will disappear only after the array of buildings are rendered in UI, i.e. when the UI freeze ends.
