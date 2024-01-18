@@ -26,6 +26,7 @@
   <button mat-menu-item [matMenuTriggerFor]="frontEndMenu">Front end</button>
   <button mat-menu-item [matMenuTriggerFor]="backEndMenu">Back end</button>
   <button mat-menu-item [matMenuTriggerFor]="databaseMenu">Database</button>
+  <button mat-menu-item [routerLink]="['/technical-documentation']">Documentation</button>
   <button mat-menu-item [matMenuTriggerFor]="designPatternsMenu">Design patterns</button>
   <button mat-menu-item [matMenuTriggerFor]="codingMenu">Coding</button>
   <button mat-menu-item [matMenuTriggerFor]="toolingMenu">Tooling</button>
@@ -40,7 +41,7 @@
 </mat-menu>
 
 <mat-menu #overviewMenu="matMenu">
-  <button mat-menu-item [routerLink]="['/overview/technologies']">Technologies</button>
+  <button mat-menu-item [routerLink]="['/overview/technologies']">Tech stack</button>
   <button mat-menu-item [routerLink]="['/overview/software']">Software</button>
   <button mat-menu-item [routerLink]="['/overview/programming-languages']">Programming languages</button>
   <button mat-menu-item [routerLink]="['/overview/lifecycle']">Software lifecycle</button>

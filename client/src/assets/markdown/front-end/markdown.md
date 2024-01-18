@@ -26,14 +26,17 @@
 	"node_modules/prismjs/components/prism-javascript.min.js",
 	"node_modules/prismjs/components/prism-css.min.js",
 	"node_modules/mermaid/dist/mermaid.min.js",
-	"node_modules/prismjs/plugins/command-line/prism-command-line.js"
+	"node_modules/prismjs/plugins/command-line/prism-command-line.js",
+	"node_modules/katex/dist/katex.min.js",
+  "node_modules/katex/dist/contrib/auto-render.min.js"
 	```
 	
 	- Append code below to "styles" section:
 	```javascript
 	/* append code below to "styles" section */
 	"node_modules/prismjs/themes/prism-okaidia.css",
-	"node_modules/prismjs/plugins/command-line/prism-command-line.css"
+	"node_modules/prismjs/plugins/command-line/prism-command-line.css",
+	"node_modules/katex/dist/katex.min.css"
 	```
 
 2. Create your markdown files under directory <code>/src/assets/markdown/</code> (or whatever directory you prefer under <code>/src/assets/</code>)
@@ -63,10 +66,11 @@ In your lazy-loaded module file, import <code>MarkdownModule</code>, and then co
 	]
 ```
 
-4. Create a component, add routing and render .md files in your template:
+4. Create a component, add routing and render .md files in your template (use 'mermaid' if your markdown file uses mermaid charts; 'katex' if math formulas)
 	```html
 	<markdown
 		mermaid
+		katex
 		src="PATH/assets/markdown/PATH_TO_YOUR_FILE.md">
 	</markdown>
 	```

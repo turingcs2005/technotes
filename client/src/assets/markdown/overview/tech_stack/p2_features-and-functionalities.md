@@ -7,7 +7,7 @@
   - Back end solution (Lindsey Fletcher; Sarah Tran)
 - Email with Power Apps (Jake Price)
 - Apache Tomcat/Spring Boot (Ryan D'entremont; Kelsey Rustin)
-- AI enabled software
+- AI/natural language processing (in progress)
 
 ```mermaid
 flowchart TB
