@@ -1,4 +1,4 @@
-## 1. 6 stages of SDLC
+## 1. Six stages of SDLC
 ```mermaid
 flowchart LR
 	Plan(1 Plan) --> Design(2 Design) --> Develop(3 Develop) -->  Test(4 Test) --> Deploy(5 Deploy) --> Maintain(6 Maintain)
@@ -13,20 +13,25 @@ ___
 
 ```mermaid 
 flowchart LR
-	EndUser(End User) <--> |feedback/intake| ProductOwner(((Product Owner<br>- SME)))
-	OtherStakeholders(Other Stakeholders<br>- Senior management<br>- Actuaries<br>- Data Scientists) <--> |feedback/intake| ProductOwner
+
+  classDef core text-align: left, fill: navy, color: white
+  classDef support text-align: left, fill: pink
+	classDef optional fill: orange
+
+	EndUser(End User):::support <--> |feedback/intake| ProductOwner(((Product Owner))):::core
+	OtherStakeholders(Other Stakeholders<br>- Senior management<br>- Actuaries<br>- Data Scientists):::support <--> |feedback/intake| ProductOwner
+	SubjectMatterExpert(Subject Matter Experts):::core --> |app details| ProductOwner
 	ProductOwner <--> |design| AnalyticsConsultant(Designer)
-	AnalyticsConsultant <--> |requirements| Developer(Developer)
-	ProductOwner <--> |feedbacks, consultation| Developer(Developer)
-	HTG(HTG) <-.-> |API, deployment| Developer
-	style EndUser text-align: left, fill: yellow
-	style ProductOwner text-align: left, fill: lightgreen
-	style AnalyticsConsultant text-align: left, fill: lightblue
-	style Developer text-align: left, fill: beige
-	style OtherStakeholders text-align: left, fill: pink
-	style HTG text-align: left, fill: orange
+	AnalyticsConsultant <--> |requirements| Developer(Developer):::core
+	ProductOwner <--> ScrumMaster(Scrum Master)
+	ScrumMaster <--> Developer
+	HTG(HTG):::optional <-.-> |API, deployment| Developer
+	ProjectManager(Project Manager) <-.-> ProductOwner
+	ProjectManager <-.-> Developer
+	ProjectManager <-.-> SubjectMatterExpert
 ```
 ---
+
 1. **Planning and Analysis**: Identify the current problems & key stakeholders; define project scope and requirements. This step should involve the product owner (a subject matter expert), end users and other stakeholders (senior management, data scientists, actuaries).
 
 2. **Design**: 

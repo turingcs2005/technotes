@@ -19,7 +19,7 @@
 	- end users and stakeholders send <i>ad hoc</i>, unvetted requirements to developers directly
 	- requirements are in conflict with each other
 	- developer confusion, frequent rework and wasted development effort
-- Product owner not being a subject matter expert (SME)
+- Product owner is not a subject matter expert (SME); absence of SME
 	- severely underestimate a project's complexity
 	- requirements are vague with missing details
 	- constant project scope creep
