@@ -13,6 +13,7 @@ import { CreatePdfComponent } from './create-pdf/create-pdf.component';
 import { PythonComponent } from './python/python.component';
 import { SharedModule } from '../shared/shared.module';
 import { RemoteDesktopComponent } from './remote-desktop/remote-desktop.component';
+import { P02282024Component } from './presentations/p02-28-2024/p02-28-2024.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RemoteDesktopComponent } from './remote-desktop/remote-desktop.componen
     SoftwareUpgradeComponent,
     CreatePdfComponent,
     PythonComponent,
-    RemoteDesktopComponent
+    RemoteDesktopComponent,
+    P02282024Component
   ],
   imports: [
     CommonModule,

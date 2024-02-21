@@ -7,10 +7,18 @@ import { TechnicalDocumentationComponent } from './technical-documentation.compo
 import { MarkdownModule } from 'ngx-markdown';
 import { SecurityContext } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { TechnicalDocumentationOverviewComponent } from './technical-documentation-overview/technical-documentation-overview.component';
+import { MermaidComponent } from './mermaid/mermaid.component';
+import { KatexComponent } from './katex/katex.component';
+import { PrismjsComponent } from './prismjs/prismjs.component';
 
 @NgModule({
   declarations: [
-    TechnicalDocumentationComponent
+    TechnicalDocumentationComponent,
+    TechnicalDocumentationOverviewComponent,
+    MermaidComponent,
+    KatexComponent,
+    PrismjsComponent
   ],
   imports: [
     CommonModule,

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'coding', loadChildren: () => import('./modules/coding/coding.module').then(m => m.CodingModule) },
   { path: 'design-patterns', loadChildren: () => import('./modules/design-patterns/design-patterns.module').then(m => m.DesignPatternsModule) },
   { path: 'technical-documentation', loadChildren: () => import('./modules/technical-documentation/technical-documentation.module').then(m => m.TechnicalDocumentationModule) },
+  { path: 'solutions-team', loadChildren: () => import('./modules/solutions-team/solutions-team.module').then(m => m.SolutionsTeamModule) },
 ];
 
 @NgModule({

@@ -1,0 +1,26 @@
+# What set us apart
+
+- Our young, talented software engineers are our single most valuable asset.
+- We embrace free, open-source technologies with little software licensing cost.
+  - Angular
+  - Node.js
+  - MongoDB
+- We use an efficient, modern technology stack.
+  - Angular: comprehensive ecosystem; easy maintenance.
+  - Node.js: highly efficient and verstile.
+  - MongoDB: efficient; can handle both structured data and unstructured; indispensable for modern AI-based applications.
+- We are highly innovative with a passion for technology.
+  - We encourage risk-taking and are not afraid of failures.
+  - We eagerly explore, test out, and adopt new technologies.
+- Our flexible approach to software development mitigates overhead cost.
+  - All but one member on the team are developers.
+  - Our multi-talented developers are capable of assuming different roles to mitigates administrative cost and communication cost.
+    - Lead developer
+    - Project manager
+    - Scrum master
+    - Designer
+    - Team manager
+  - We adopt a flexible approach to project management.
+- Our developers have a lot of focus time and minimal meetings.
+- We are well-organized with comprehensive, detailed technical documentation.
+- Our support model is highly flexible and responsive.

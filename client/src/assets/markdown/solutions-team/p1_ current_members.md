@@ -30,6 +30,8 @@
 	}
 </style>
 
+# Current members
+
 <table>
 	<thead>
 		<th>Team member</th>
@@ -85,6 +87,16 @@
 		<td>Solomon</td>
 		<td>Property Workbook & enhancement, Marinas Rater</td>
 		<td>lead developer, contributor</td>
+	</tr>
+	<tr>
+		<td >Nicole</td>
+		<td>New hire, starting 02/26/2024</td>
+		<td>contributor</td>
+	</tr>
+	<tr>
+		<td >Saket</td>
+		<td>New hire, starting 03/04/2024</td>
+		<td>contributor</td>
 	</tr>
 </table>
 

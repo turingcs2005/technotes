@@ -1,3 +1,7 @@
+# KaTeX for math formulas
+
+Use concise, accurate math formulas to eliminate ambiguity and aid in development. Here is an example of premium calculation:
+
 Final 🦞 boat policy premium
 
 $P_{final} = \sum_{i=1}^6 P_i$, where $P_i$ &isin;

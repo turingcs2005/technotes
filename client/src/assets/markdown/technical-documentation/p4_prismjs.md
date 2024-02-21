@@ -1,3 +1,7 @@
+# Prismjs for source code syntax highlighting
+
+Syntax highlighting greatly improves source code readability. Here is an example:
+
 ```typescript
 import mongoose from "mongoose";
 

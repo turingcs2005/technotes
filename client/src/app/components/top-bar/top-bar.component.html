@@ -9,29 +9,27 @@
   <div>Technical Notes on MEAN + SQL Stack</div>
 
   <div>
-    <mat-icon [routerLink]="['/documentation']" class="mat-elevation-z2"
-      matTooltip="Developer resources"
-    >description</mat-icon> &nbsp;
-    <mat-icon [routerLink]="['/help']" class="mat-elevation-z2"
-      matTooltip="Help"
+    <mat-icon [matMenuTriggerFor]="postMenu" matTooltip="Post" class="mat-elevation-z2">post_add</mat-icon> &nbsp;
+    <mat-icon [routerLink]="['/documentation']" class="mat-elevation-z2" matTooltip="Developer resources">code</mat-icon> &nbsp;
+    <mat-icon [routerLink]="['/help']" class="mat-elevation-z2" matTooltip="Help"
     >help</mat-icon> &nbsp;
   </div>
 
 </mat-toolbar>
 
 <mat-menu #appMenu="matMenu">
-  <button mat-menu-item [routerLink]="['/']"><mat-icon>home</mat-icon ></button>
-  <button mat-menu-item [matMenuTriggerFor]="postMenu"><mat-icon matTooltip="Post">post_add</mat-icon></button>
-  <button mat-menu-item [matMenuTriggerFor]="overviewMenu">Overview</button>
-  <button mat-menu-item [matMenuTriggerFor]="frontEndMenu">Front end</button>
-  <button mat-menu-item [matMenuTriggerFor]="backEndMenu">Back end</button>
-  <button mat-menu-item [matMenuTriggerFor]="databaseMenu">Database</button>
-  <button mat-menu-item [routerLink]="['/technical-documentation']">Documentation</button>
-  <button mat-menu-item [matMenuTriggerFor]="designPatternsMenu">Design patterns</button>
-  <button mat-menu-item [matMenuTriggerFor]="codingMenu">Coding</button>
-  <button mat-menu-item [matMenuTriggerFor]="toolingMenu">Tooling</button>
-  <button mat-menu-item [matMenuTriggerFor]="deployemntMenu">Deployment</button>
-  <button mat-menu-item [matMenuTriggerFor]="miscellaneousMenu">Miscellaneous</button>
+  <button mat-menu-item [routerLink]="['/']"><mat-icon>home</mat-icon >Home</button>
+  <button mat-menu-item [matMenuTriggerFor]="overviewMenu"><mat-icon>apps</mat-icon>App development</button>
+  <button mat-menu-item [matMenuTriggerFor]="teamMenu"><mat-icon>group</mat-icon>Solutions team</button>
+  <button mat-menu-item [matMenuTriggerFor]="frontEndMenu"><mat-icon>web</mat-icon>Front end</button>
+  <button mat-menu-item [matMenuTriggerFor]="backEndMenu"><mat-icon>dns</mat-icon>Back end</button>
+  <button mat-menu-item [matMenuTriggerFor]="databaseMenu"><mat-icon>save</mat-icon>Database</button>
+  <button mat-menu-item [matMenuTriggerFor]="technicalDocumentationMenu"><mat-icon>description</mat-icon>Tech documentation</button>
+  <button mat-menu-item [matMenuTriggerFor]="designPatternsMenu"><mat-icon>pattern</mat-icon>Design patterns</button>
+  <button mat-menu-item [matMenuTriggerFor]="codingMenu"><mat-icon>terminal</mat-icon>Coding</button>
+  <button mat-menu-item [matMenuTriggerFor]="toolingMenu"><mat-icon>handyman</mat-icon>Tooling</button>
+  <button mat-menu-item [matMenuTriggerFor]="deployemntMenu"><mat-icon>rocket_launch</mat-icon>Deployment</button>
+  <button mat-menu-item [matMenuTriggerFor]="miscellaneousMenu"><mat-icon>more_horiz</mat-icon>Miscellaneous</button>
 </mat-menu>
 
 <mat-menu #postMenu="matMenu">
@@ -45,7 +43,12 @@
   <button mat-menu-item [routerLink]="['/overview/software']">Software</button>
   <button mat-menu-item [routerLink]="['/overview/programming-languages']">Programming languages</button>
   <button mat-menu-item [routerLink]="['/overview/lifecycle']">Software lifecycle</button>
-  <button mat-menu-item [routerLink]="['/overview/team']">Team</button>
+</mat-menu>
+
+<mat-menu #teamMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/solutions-team/current-members']">Current members</button>
+  <button mat-menu-item [routerLink]="['/solutions-team/current-projects']">Projects</button>
+  <button mat-menu-item [routerLink]="['/solutions-team/what-set-us-apart']">What set us apart</button>
 </mat-menu>
 
 <mat-menu #frontEndMenu="matMenu">
@@ -66,7 +69,7 @@
   <button mat-menu-item [routerLink]="['/front-end/time-stamp']">Off by one day</button>
   <button mat-menu-item [routerLink]="['/front-end/calculated-fields']">Calculated fields</button>
   <button mat-menu-item [routerLink]="['/front-end/lazy-loading']">Lazy loading</button>
-  <button mat-menu-item [routerLink]="['front-end/ui-freeze-spinner']">UI freeze spinner</button>
+  <button mat-menu-item [routerLink]="['/front-end/ui-freeze-spinner']">UI freeze spinner</button>
 </mat-menu>
 
 <mat-menu #backEndMenu="matMenu">
@@ -109,6 +112,13 @@
   <button mat-menu-item [routerLink]="['/database/sql']">SQL</button>
   <button mat-menu-item [routerLink]="['/database/mongodb']">MongoDB</button>
   <button mat-menu-item [matMenuTriggerFor]="sequelizeMenu">Sequelize</button>
+</mat-menu>
+
+<mat-menu #technicalDocumentationMenu="matMenu">
+  <button mat-menu-item [routerLink]="['/technical-documentation/overview']">Overview</button>
+  <button mat-menu-item [routerLink]="['/technical-documentation/mermaid']">Mermaid</button>
+  <button mat-menu-item [routerLink]="['/technical-documentation/katex']">KaTeX</button>
+  <button mat-menu-item [routerLink]="['/technical-documentation/prismjs']">Prismjs</button>
 </mat-menu>
 
 <mat-menu #sequelizeMenu="matMenu">

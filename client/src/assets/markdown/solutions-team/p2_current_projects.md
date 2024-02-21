@@ -1,4 +1,4 @@
-## Project list
+# Projects
 
 1. Property Workbook
 2. Workers Compensation Workbook
@@ -12,7 +12,7 @@
 10. Marinas Rater
 11. International Rating Platform
 12. Office Reservation App
-13. PDF generator
+13. Document Builder
 14. Marine RAPP
 
 ```mermaid
@@ -25,6 +25,7 @@ classDef people fill: yellow, text-align: left
 	Jeff(Jeff):::people --> AuditingToolOperations(Auditing Tool - Ops)
 	James(James) --> FAC(FAC):::completed
 	Rui(Rui):::people --> FAC(FAC):::completed
+	Rui --> OfficeSpaceReservationTool(Office Reservation):::completed
 	Jake(Jake):::people --> FACT(FACT Tool):::completed
 	Matt(Matt):::people --> FACT
 	Sol(Sol):::people --> PropertyWorkbook(Property Workbook):::completed
@@ -56,6 +57,7 @@ flowchart LR
 	classDef inprogress color: navy, fill: lightgreen, text-align: left
 	classDef people fill: yellow, text-align: left
 
+	Rui(Rui):::people --> DocumentBuilder(Document Builder):::inprogress
 	Kelsey(Kelsey):::people --> MarinasRater(Marinas Rater):::inprogress
 	Sarah(Sarah):::people --> MarinasRater
 	Jake(Jake):::people --> InternationalRater(International Rater):::inprogress
